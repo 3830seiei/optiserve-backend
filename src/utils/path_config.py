@@ -38,7 +38,7 @@ class PathConfig:
         
         # OS自動判定
         if self._system == "darwin":  # macOS
-            base_path = Path("/Users/smds/develop/smds_optiserve")
+            base_path = Path("/Users/smds/develop/optiserve-backend")
         elif self._system == "linux":
             # WSL Ubuntuかコンテナかを判定
             if os.path.exists("/proc/version"):

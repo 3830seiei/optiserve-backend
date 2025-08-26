@@ -41,7 +41,7 @@ rm -f alembic_pg_optigate/versions/*.pyc
 
 echo "3. マイグレーションファイルを自動生成中..."
 TOOLS_PATH="/Users/smds/develop/devbase/tools"
-CONFIG_KEY="smds_optiserve_pg_optigate"
+CONFIG_KEY="optiserve_backend_pg_optigate"
 python3 "${TOOLS_PATH}/generate_dbdesign_artifacts.py" "${CONFIG_KEY}"
 
 echo "4. alembic -c alembic_pg_optigate.ini upgrade head の実行"

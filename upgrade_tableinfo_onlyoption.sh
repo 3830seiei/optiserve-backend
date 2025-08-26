@@ -37,7 +37,7 @@ set -euo pipefail
 IFS=$'\n\t'
 
 # ---------- 変数設定（必要に応じて変更） -----------------------------------
-CONFIG_KEY="${CONFIG_KEY:-smds_optiserve_pg_optigate}"      # generate_dbdesign_artifacts.py に渡す config_key
+CONFIG_KEY="${CONFIG_KEY:-optiserve_backend_pg_optigate}"      # generate_dbdesign_artifacts.py に渡す config_key
 YAML_BASENAME="${YAML_BASENAME:-medical_equipment_ledger}"  # 対象YAML（拡張子なし）
 TOOL_PATH="${TOOL_PATH:-/Users/smds/develop/devbase/tools/generate_dbdesign_artifacts.py}"  # ジェネレータスクリプトのパス
 ALEMBIC_INI="${ALEMBIC_INI:-alembic_pg_optigate.ini}"       # Alembic ini ファイル

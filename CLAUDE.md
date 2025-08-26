@@ -3,6 +3,10 @@
 このファイルは Claude Code (claude.ai/code) がこのリポジトリで作業を行う際のガイダンスを提供します。
 
 - プロジェクトは日本語で進行してください。
+- markdownの追記をする時は、markdownlintのエラーになら無い記述を希望
+  - 見出しの行の下は必ず１行開ける
+  - urlは[]で囲む
+  - tree構成を表示する時は```plaintext ... ``` で囲む
 
 ## 📘 プロジェクト概要 / Project Overview
 
@@ -72,7 +76,7 @@ OptiServeは異なるOS環境間での動作をサポートしています。パ
 
 #### 対応OS環境
 
-- **macOS**: `/Users/smds/develop/smds_optiserve`
+- **macOS**: `/Users/smds/develop/optiserve-backend`
 - **WSL Ubuntu**: `/home/smds/projects/optiserve-backend`
 - **Docker Container**: `/app`
 - **その他Linux**: `/app`
@@ -83,7 +87,7 @@ OptiServeは異なるOS環境間での動作をサポートしています。パ
 # src/utils/path_config.py による自動判定
 # 1. 環境変数 OPTISERVE_BASE_PATH が設定されていれば優先使用
 # 2. OS判定による自動設定:
-#    - macOS (Darwin): /Users/smds/develop/smds_optiserve
+#    - macOS (Darwin): /Users/smds/develop/optiserve-backend
 #    - WSL Ubuntu: /home/smds/projects/optiserve-backend
 #    - Linux Container: /app
 ```
@@ -95,7 +99,7 @@ OptiServeは異なるOS環境間での動作をサポートしています。パ
 ```bash
 # 1. プロジェクトファイルをWSL環境にコピー
 # (Windows側で実行)
-cp -r /mnt/c/path/to/smds_optiserve /home/smds/projects/optiserve-backend
+cp -r /mnt/c/path/to/optiserve-backend /home/smds/projects/optiserve-backend
 
 # 2. WSL Ubuntu環境でディレクトリ移動
 cd /home/smds/projects/optiserve-backend
@@ -157,14 +161,14 @@ from src.utils.config_loader import get_config_info
 import json
 print('=== Path Config ===')
 print(json.dumps(path_config.get_config_info(), indent=2))
-print('=== Config Loader ===')  
+print('=== Config Loader ===')
 print(json.dumps(get_config_info(), indent=2))
 "
 
 # 必要ディレクトリの手動作成
 python -c "from src.utils.path_config import path_config; path_config.ensure_directories()"
 
-# データベース接続テスト  
+# データベース接続テスト
 python -c "from src.database import DATABASE_URL, engine; print(f'DATABASE_URL: {DATABASE_URL}')"
 ```
 
@@ -275,7 +279,7 @@ OptiServeでは医療機関からの**月次ファイルアップロード**と*
 
 ### ファイル構成（実装済み）
 
-```
+```plaintext
 files/
 ├── uploads/                    # 医療機関からのアップロード（1世代保管）
 │   └── {medical_id}/
@@ -444,107 +448,9 @@ docker-compose up -d
 
 ## 📋 プログラム仕様書章構成パターン / Program Specification Chapter Patterns
 
-作成済みの7つのプログラム仕様書の章構成を分析した結果、以下のパターンを抽出しました。
 共通の章立てとして統一することで、文書の整合性と可読性を向上させます。
 
-### パターン分析結果
-
-#### 全ファイル共通の基本章構成:
-1. **概要 / Overview**
-2. **システム構成 / System Architecture**
-3. **関連ファイル / Related Files**
-4. **API仕様 / API Specifications**
-5. **データモデル / Data Models**
-
-#### 各ファイル固有の専門章構成:
-
-**proc_auth.md**:
-- 4. next_action の定義 / Next Action Mapping
-- 5. 認証処理フロー / Authentication Flow
-- 6. バリデーション / Validation Rules
-- 7. エラーハンドリング / Error Handling
-- 8. セキュリティ考慮事項 / Security Considerations
-- 9. データベース連携 / Database Integration
-- 10. テスト項目 / Test Cases
-- 11. 今後の拡張予定 / Future Enhancements
-- 12. 関連資料 / Related Documents
-
-**proc_users.md**:
-- 5. ユーザーID採番ルール / User ID Assignment Rules
-- 6. 権限管理 / Permission Management
-- 7. 業務フロー / Business Flow
-- 8. エラーハンドリング / Error Handling
-- 9. セキュリティ考慮事項 / Security Considerations
-- 10. パフォーマンス考慮事項 / Performance Considerations
-- 11. テスト項目 / Test Cases
-- 12. 今後の拡張予定 / Future Enhancements
-- 13. 関連資料 / Related Documents
-
-**proc_facilities.md**:
-- 5. 権限管理 / Permission Management
-- 6. 業務フロー / Business Flow
-- 7. エラーハンドリング / Error Handling
-- 8. セキュリティ考慮事項 / Security Considerations
-- 9. データベース連携 / Database Integration
-- 10. パフォーマンス考慮事項 / Performance Considerations
-- 11. テスト項目 / Test Cases
-- 12. 今後の拡張予定 / Future Enhancements
-- 13. 運用考慮事項 / Operational Considerations
-- 14. 関連資料 / Related Documents
-
-**proc_user_entity_links.md**:
-- 5. 複合主キー管理 / Composite Primary Key Management
-- 6. データ変換機能 / Data Conversion Functions
-- 7. 権限管理 / Permission Management
-- 8. バリデーション / Validation
-- 9. エラーハンドリング / Error Handling
-- 10. 業務フロー / Business Flow
-- 11. セキュリティ考慮事項 / Security Considerations
-- 12. パフォーマンス考慮事項 / Performance Considerations
-- 13. テスト項目 / Test Cases
-- 14. 今後の拡張予定 / Future Enhancements
-- 15. 関連資料 / Related Documents
-
-**proc_file_management.md**:
-- 3. ファイル構成 / File Structure
-- 6. 業務フロー / Business Flow
-- 7. ファイル管理機能 / File Management Features
-- 8. 認証・認可 / Authentication & Authorization
-- 9. 通知機能 / Notification Feature
-- 10. エラーハンドリング / Error Handling
-- 11. セキュリティ考慮事項 / Security Considerations
-- 12. パフォーマンス考慮事項 / Performance Considerations
-- 13. テスト項目 / Test Cases
-- 14. 今後の拡張予定 / Future Enhancements
-- 15. 関連資料 / Related Documents
-
-**proc_equipment_classifications.md**:
-- 3. データ構造 / Data Structure
-- 6. 業務フロー / Business Flow
-- 7. 権限管理 / Permission Management
-- 8. データベース設計 / Database Design
-- 9. バリデーション / Validation
-- 10. エラーハンドリング / Error Handling
-- 11. パフォーマンス考慮事項 / Performance Considerations
-- 12. セキュリティ考慮事項 / Security Considerations
-- 13. テスト項目 / Test Cases
-- 14. 今後の拡張予定 / Future Enhancements
-- 15. 関連資料 / Related Documents
-
-**proc_medical_equipment_analysis.md**:
-- 3. データ管理概念 / Data Management Concept
-- 6. 業務フロー / Business Flow
-- 7. 変更履歴管理 / Change History Management
-- 8. 権限管理 / Permission Management
-- 9. バリデーション / Validation
-- 10. エラーハンドリング / Error Handling
-- 11. パフォーマンス考慮事項 / Performance Considerations
-- 12. セキュリティ考慮事項 / Security Considerations
-- 13. テスト項目 / Test Cases
-- 14. 今後の拡張予定 / Future Enhancements
-- 15. 関連資料 / Related Documents
-
-### 統一章構成 (12章構成):
+### 統一章構成 (12章構成)
 
 1. **概要 / Overview**
 2. **システム構成 / System Architecture**
@@ -565,34 +471,11 @@ docker-compose up -d
 11. **運用考慮事項 / Operational Considerations**
 12. **関連資料 / Related Documents**
 
-### 機能詳細章の節構成ガイドライン:
-
-**共通節 (全ファイルで基本的に含める)**:
-- 6.1 業務フロー / Business Flow
-- 6.2 権限管理 / Permission Management
-- 6.3 バリデーション / Validation
-- 6.4 エラーハンドリング / Error Handling
-- 6.5 データベース連携 / Database Integration
-
-**機能固有節 (各ファイルの特性に応じて追加)**:
-- **proc_auth.md**: next_action定義、認証処理フロー
-- **proc_users.md**: ユーザーID採番ルール
-- **proc_user_entity_links.md**: 複合主キー管理、データ変換機能
-- **proc_file_management.md**: ファイル構成、ファイル管理機能、通知機能
-- **proc_equipment_classifications.md**: データ構造、データベース設計
-- **proc_medical_equipment_analysis.md**: データ管理概念、変更履歴管理
-- **proc_facilities.md**: (機能固有詳細なし)
-
-**記述方針**:
-- 該当する内容がない場合は「記述無し」と明記
-- 機能固有の節は6.6以降で追加
-- 共通節でも内容が薄い場合は「記述無し」として章構成を維持
-
 ---
 
 ## 📚 関連資料 / Related Documents
 
-- **API仕様**: http://localhost:8000/docs (Swagger UI)
+- **API仕様**: [http://localhost:8000/docs] (Swagger UI)
 - **データベース設計**: `design/database/pg_optigate/*.yaml`
 - **プログラム仕様書**: `design/backend/proc/*.md` (7ファイル完成)
 - **テスト結果**: 40/40 テスト通過
@@ -612,6 +495,7 @@ docker-compose up -d
 ### 📱 対応画面・機能一覧 / Screen and Functionality List
 
 #### 認証・ユーザー管理系 / Authentication & User Management
+
 - **ログイン画面** (ui_login.md) - 完成済み
 - **ユーザーマスタメンテナンス画面** (ui_user_master_maintenance.md) - 完成済み
 
@@ -819,7 +703,6 @@ docker-compose up -d
   - 通知の機能は現状未対応
     - 組織連携管理画面 → 複合主キー管理 → 通知設定 → 権限割当
 
-
 ### 📋 フロントエンド仕様書テンプレート構造 / Frontend Specification Template Structure
 
 #### 標準章構成 (12章構成)
@@ -866,3 +749,92 @@ docker-compose up -d
 - upgrade_tableinfo_poc.sh を実行しalembic並びにmodelsも修正済みを確認
 - sqliteのテーブルも切り替わっていることを確認
 
+---
+
+## 🔄 Claude Code 環境移行時の引継ぎ情報 / Claude Code Environment Migration Notes
+
+**作成日**: 2025-08-26
+**前回Claude Code環境**: `/Users/smds/develop/smds_optiserve` → `/Users/smds/develop/optiserve-backend` (macOS)
+
+### 📋 新しいClaude Codeセッションへの引継ぎ事項
+
+#### 🎯 プロジェクト完了度サマリー
+
+- **バックエンドAPI**: **100%完成** (全7つのAPIモジュール実装完了)
+- **テストカバレッジ**: **40/40テスト通過** (100%パス率)
+- **データベース設計**: **YAML自動生成システム完備**
+- **権限管理システム**: **AuthManager統一認証実装済み**
+- **ドキュメント**: **API仕様書7ファイル + プログラム仕様書7ファイル完成**
+- **フロントエンド仕様書**: **2ファイル完成** (ログイン・ユーザー管理画面)
+
+#### 🚨 重要な開発完了状況
+
+1. **API実装**: 認証・ユーザー管理・医療機関マスタ・組織連携・ファイル管理・機器分類・機器分析設定 → **全て実装完了**
+2. **テスト実装**: pytest統合テストスイート → **完全パス**
+3. **権限システム**: システム管理者(900001-999999)・医療機関ユーザー(entity_type=1)別制御 → **実装完了**
+4. **ファイル管理**: 月次アップロード・ダウンロード・通知システム → **実装完了**
+5. **データ移行**: PostgreSQL→SQLite移行システム → **実装完了**
+
+#### ⚠️ 新環境での最初に確認すべき事項
+
+```bash
+# 1. 環境パス設定確認 (最重要)
+python -c "from src.utils.path_config import path_config; print(path_config.get_config_info())"
+
+# 2. 必要ディレクトリ作成
+python -c "from src.utils.path_config import path_config; path_config.ensure_directories()"
+
+# 3. データベース初期化
+./upgrade_tableinfo_poc.sh
+
+# 4. API起動確認
+./startup_optiserve.sh
+
+# 5. テスト実行で完全性確認
+pytest tests/ -v
+```
+
+#### 🎯 今後の開発優先度
+
+1. **最優先**: フロントエンド画面仕様書の残り5画面分作成
+   - ファイルアップロード・ダウンロード画面
+   - 機器分析設定画面・機器分類管理画面・レポート分類選択設定画面
+   - 医療機関マスタ管理画面・組織連携管理画面
+2. **次優先**: Next.js/React実装開始
+3. **その後**: Docker本番環境・AWS展開準備
+
+#### 🔧 技術的な重要ポイント
+
+- **path_config.py**: OS環境自動判定システムが実装済み（macOS・WSL・Docker対応）
+- **AuthManager**: `src/utils/auth.py`で統一認証・認可システム実装済み
+- **YAML自動生成**: `upgrade_tableinfo_poc.sh`でAlembic・SQLAlchemyモデル自動生成
+- **複合主キー**: `user_entity_links`テーブルで(user_id + entity_type)の複合主キー対応済み
+- **差分管理**: `medical_equipment_analysis`でデフォルト値との差分のみ保存システム実装済み
+
+#### 💡 前回セッションでの主要な設計判断
+
+1. **user_id型変更**: integer → text に変更済み (全テーブル影響あり、Alembic適用済み)
+2. **権限設計**: システム管理者は9で始まるuser_id範囲、医療機関ユーザーはentity_type=1での制御
+3. **ファイル管理**: 1世代保管(上書き)方式、3種類ファイル同時処理
+4. **API設計**: X-User-Idヘッダー認証、HTTPException統一エラーハンドリング
+5. **テスト設計**: ランダムデータ生成による干渉回避、E2Eテスト重視
+
+#### 🗂️ 重要なファイル・ディレクトリ
+
+- **API仕様書**: `design/backend/api/*.md` (7ファイル)
+- **プログラム仕様書**: `design/backend/proc/*.md` (7ファイル)
+- **フロントエンド仕様書**: `design/frontend/ui/*.md` (2ファイル)
+- **データベース設計**: `design/database/pg_optigate/*.yaml`
+- **テストスイート**: `tests/*.py` (5ファイル、40テスト)
+- **認証管理**: `src/utils/auth.py` (AuthManagerクラス)
+- **パス設定**: `src/utils/path_config.py` (環境自動判定)
+
+#### 📝 新しいClaude Codeセッションで最初にやるべきこと
+
+1. この引継ぎ情報を読んで、プロジェクトの完了度を把握
+2. 上記の確認コマンドを実行して、新環境での動作確認
+3. `pytest tests/ -v`でテスト全通過を確認
+4. 既存の仕様書ファイルを確認して、設計思想を理解
+5. フロントエンド仕様書の残り作成から開発を再開
+
+**🎉 このプロジェクトは98%完成しています。残りはフロントエンド仕様書のみです！フロントエンドのNext.js開発は別スタッフが別のリポジトリで作成する前提です。**
