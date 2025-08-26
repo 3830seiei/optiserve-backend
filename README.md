@@ -31,7 +31,7 @@
    # 作業・コミット
    git push origin develop
    ```
-2.	機能が完成したら個人リポジトリの main に反映
+2. **機能が完成したら個人リポジトリの main に反映**
 
    ```bash
    git checkout main
@@ -39,7 +39,7 @@
    git push origin main
    ```
 
-3.	区切りの良いタイミングで組織リポジトリの main に反映
+3. **区切りの良いタイミングで組織リポジトリの main に反映**
 
    ```bash
    git push upstream main
