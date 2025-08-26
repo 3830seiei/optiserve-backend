@@ -1,0 +1,37 @@
+@startuml
+'-------------------------------------------
+'Table Name  : equipment_classification_report_selection
+'Description : レポート出力用の機器分類の選択情報
+'
+'[ChangeLog]
+
+'  v1.0.0 (2025-06-27)
+'  - [H.Miyazawa] OptiServe用のデータベース設計
+
+'  v1.1.0 (2025-07-10)
+'  - [H.Miyazawa] 1.PK情報バグ修正（rank追加）。2.外部キー情報を追加
+
+'  v1.2.0 (2025-08-13)
+'  - [H.Miyazawa] 登録、更新のユーザーIDを追加
+
+'  v1.3.0 (2025-08-22)
+'  - [H.Miyazawa] ユーザーIDをintegerからtextに変更。
+
+'[Note]
+'  - 2025-08-22 : generate_dbdesign_artifacts.pyによる自動生成
+'-------------------------------------------
+hide circle
+
+entity "equipment_classification_report_selection" as e01 {
+  * medical_id : Integer
+  * rank : Integer
+
+  --
+    classification_id : Integer
+  * reg_user_id : Text
+  * regdate : DateTime
+  * update_user_id : Text
+  * lastupdate : DateTime
+
+}
+@enduml

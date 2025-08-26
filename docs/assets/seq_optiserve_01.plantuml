@@ -1,0 +1,27 @@
+@startuml
+'------------------------------------------------
+' Title: OptiServe Hospital User Login
+'        医療機関ユーザーのログイン
+' Date: 2025-03-19
+' Author: H.Miyazawa
+' ChangeLog:
+'    2025-03-19: First Edition
+'------------------------------------------------
+hide footbox
+actor Hospital as hp
+participant "OptiServe" as os
+entity "OptiServe DB" as osdb
+
+note over hp: (p2)メーカーも同様の流れ
+hp -> os: ログイン
+os -> osdb: ログイン情報の照会
+osdb -> osdb: ユーザーマスタの確認
+alt ログイン成功
+    osdb --> os: ログイン情報の返却
+    os -> os: アカウント用メニューの表示
+else ログイン失敗
+    osdb --> os: ログイン情報の返却
+    os -> os: ログイン失敗のメッセージ表示
+end
+note right os: パスワードを忘れた場合の対応として\nKintoneのパスワード再設定のメール送信機能を利用
+@enduml

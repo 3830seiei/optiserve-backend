@@ -1,0 +1,37 @@
+#==========================================================
+# OptiServe用Configファイル
+# 
+# ChangeLog:
+#   v1.0.0 (2025-08-06)
+#   - 新規作成（smds_core用設定をベース）
+#==========================================================
+# ログ設定
+# Note:
+#   - LOGFILTERは指定した値より上位のログが出力される
+#     - CRITICAL : 50
+#     - ERROR    : 40
+#     - WARNING  : 30
+#     - INFO     : 20
+#     - DEBUG    : 10
+#     - LOGFILTER="ERROR"とした場合、出力されるのは[ERROR][CRITICAL]のみとなる
+#----------------------------------------------------------
+logging:
+  LOGPATH: "./log"  # ログファイルの出力パス
+  LOGNAME: "OptiServe"  # ログファイル名の先頭
+  LOGFILTER: "DEBUG"  # ログ出力レベル（フィルター）のデフォルト
+  LOGMAXSIZE: 4194304  # 1つのログファイルの最大サイズ（Byte）
+  LOGBACKUPCOUNT: 5  # ログファイルの最大バックアップ数
+  # ログの書式について
+  #    1) ORIGINAL_MSGがTrueの場合はLOGFORMATは固定でmessageのみとなる
+  #    2) プロジェクト共通の場合はクラス生成は1回なので、(name)は常に一定
+  ORIGINAL_MSG: True  # messageに独自フォーマットをセットする場合はTrue
+  #LOGFORMAT: "[%(asctime)s][%(levelname)s] %(message)s"　　　# プロジェクト共通の書式
+  #LOGFORMAT: "[%(asctime)s][%(name)s][%(levelname)s] %(message)s"　　　# 一般的な書式
+#----------------------------------------------------------
+# データベース設定
+# Note:
+#   - OptiServeはSQLiteを使用
+#----------------------------------------------------------
+database:
+  uri: "sqlite:///poc_optigate.db"  # SqlAlchemyのデータベース接続URI
+  echo: False  # SqlAlchemyでSQL文をコンソール出力するオプション

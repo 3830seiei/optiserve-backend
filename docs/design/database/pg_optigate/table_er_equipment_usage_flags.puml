@@ -1,0 +1,26 @@
+@startuml
+'-------------------------------------------
+'Table Name  : equipment_usage_flags
+'Description : 医療機器の分析使用フラグ管理テーブル
+'
+'[ChangeLog]
+
+'  v1.0.0 (2025-06-27)
+'  - [H.Miyazawa] OptiServe用のデータベース設計
+
+'[Note]
+'  - 2025-07-16 : generate_dbdesign_artifacts.pyによる自動生成
+'-------------------------------------------
+hide circle
+
+entity "equipment_usage_flags" as e01 {
+  * medical_id : Integer
+  * equipment_id : Integer
+
+  --
+  * is_active : Boolean
+  * regdate : DateTime
+  * lastupdate : DateTime
+
+}
+@enduml

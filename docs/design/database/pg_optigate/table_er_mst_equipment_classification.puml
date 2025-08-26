@@ -1,0 +1,40 @@
+@startuml
+'-------------------------------------------
+'Table Name  : mst_equipment_classification
+'Description : 医療機関別と公開用（共通）の医療機器分類を管理するマスタテーブル
+'
+'[ChangeLog]
+
+'  v1.0.0 (2025-06-27)
+'  - [H.Miyazawa] OptiServe用のデータベース設計
+
+'  v1.1.0 (2025-07-10)
+'  - [H.Miyazawa] インデックス情報と外部キー情報を追加
+
+'  v1.2.0 (2025-08-13)
+'  - [H.Miyazawa] 登録、更新のユーザーIDを追加
+
+'  v1.3.0 (2025-08-22)
+'  - [H.Miyazawa] ユーザーIDをintegerからtextに変更。
+
+'[Note]
+'  - 2025-08-22 : generate_dbdesign_artifacts.pyによる自動生成
+'-------------------------------------------
+hide circle
+
+entity "mst_equipment_classification" as e01 {
+  * classification_id : Integer
+
+  --
+    medical_id : Integer
+  * classification_level : Integer
+  * classification_name : Text
+    parent_classification_id : Integer
+    publication_classification_id : Integer
+  * reg_user_id : Text
+  * regdate : DateTime
+  * update_user_id : Text
+  * lastupdate : DateTime
+
+}
+@enduml

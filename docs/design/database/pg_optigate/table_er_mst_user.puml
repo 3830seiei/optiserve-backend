@@ -1,0 +1,45 @@
+@startuml
+'-------------------------------------------
+'Table Name  : mst_user
+'Description : OptiServe管理のユーザーマスタ
+'
+'[ChangeLog]
+
+'  v1.0.0 (2025-06-27)
+'  - [H.Miyazawa] OptiServe用のデータベース設計
+
+'  v1.1.0 (2025-07-10)
+'  - [H.Miyazawa] 1. FK制約の追加とコメントの修正。どちらも情報のみで実際にFK制約は無し。2. インデックス情報の追加。
+
+'  v1.2.0 (2025-07-16)
+'  - [H.Miyazawa] 1. proc_type -> user_statusに変更し、inactive時の理由項目を追加。2. entity_typeに9: 管理者権限を追加。
+
+'  v1.3.0 (2025-08-22)
+'  - [H.Miyazawa] ユーザーIDをintegerからtextに変更。
+
+'[Note]
+'  - 2025-08-22 : generate_dbdesign_artifacts.pyによる自動生成
+'-------------------------------------------
+hide circle
+
+entity "mst_user" as e01 {
+  * user_id : Text
+
+  --
+  * user_name : Text
+  * entity_type : Integer
+  * entity_relation_id : Integer
+  * password : Text
+  * e_mail : Text
+    phone_number : Text
+  * mobile_number : Text
+  * user_status : Integer
+    inactive_reason_code : Integer
+    inactive_reason_note : Text
+  * reg_user_id : Text
+  * regdate : DateTime
+  * update_user_id : Text
+  * lastupdate : DateTime
+
+}
+@enduml

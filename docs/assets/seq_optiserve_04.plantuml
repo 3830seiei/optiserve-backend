@@ -1,0 +1,50 @@
+@startuml
+'------------------------------------------------
+' Title: OptiServe Generate Dealer User
+'        ディーラーユーザーの追加
+' Date: 2025-03-17
+' Author: H.Miyazawa
+' ChangeLog:
+'    2025-03-17: First Edition
+'------------------------------------------------
+hide footbox
+actor Hospital as hp
+actor Dealer as dl
+actor システム管理者 as admin
+actor 販社 as ricoh
+participant "OptiServe" as os
+entity "OptiServe DB" as osdb
+
+== Dealer User Add Request ==
+dl -> admin: ユーザー追加依頼
+admin -> ricoh: アカウント数追加依頼
+ricoh -> ricoh: アカウント数追加
+note right ricoh: アカウント数追加は数日必要
+ricoh --> admin: アカウント数追加完了の\nメール送信
+admin -> admin: アカウント数追加を確認
+admin -> os: ユーザー追加実行\n（最低限の情報のみ）
+os -> osdb: ユーザーの追加
+osdb -> osdb: ユーザーマスタの更新
+osdb --> os: ユーザー追加結果の返却
+os -> os: ユーザー情報登録完了の\nメッセージ作成
+os -> dl: ユーザー情報登録完了の\nメッセージ送信
+os --> admin: メッセージ送信のCC
+dl -> os: 初ログイン
+os -> os: パスワード変更
+os -> os: 基本情報の更新
+os -> osdb: ユーザーマスタの更新
+osdb -> osdb: ユーザーマスタの更新
+osdb --> os: ユーザー情報更新結果の返却
+
+== Relationship between Dealer and Hospital ==
+dl -> hp: 権限の付与を依頼
+hp -> hp: 権限の決定
+hp -> os: ディーラー情報及び権限の追加
+os -> osdb: ディーラー情報及び権限の更新
+osdb -> osdb: ディーラー権限マスタの更新
+osdb --> os: ディーラー情報及び権限の更新結果の返却
+os -> dl: 権限の付与完了の報告
+dl -> os: ログイン
+os -> os: 医療機関の選択
+os -> os: 対象医療機関のメニュー表示
+@enduml

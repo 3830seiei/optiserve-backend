@@ -1,0 +1,43 @@
+@startuml
+'------------------------------------------------
+' Title: OptiServe Modify Master Data
+'        医療機関マスタ情報のメンテナンス
+' Date: 2025-03-17
+' Author: H.Miyazawa
+' ChangeLog:
+'    2025-03-17: First Edition
+'------------------------------------------------
+hide footbox
+actor Hospital as hp
+participant "OptiServe" as os
+participant "OptiServe API" as osapi
+entity "OptiServe DB" as osdb
+participant "opsman" as op
+participant "datahub" as dh
+participant "datarefinery" as df
+entity "datawarehouse" as dw
+
+== 機器台帳のメンテナンス ==
+hp -> os: 機器台帳メンテナンスを開く
+note right hp: 集計対象の医療機器を台帳から選択する為の画面
+os -> os: 機器単位に集計対象か否かの\nチェックボックスを設定
+os -> os: 更新決定
+os -> osdb: 機器台帳情報の更新
+osdb -> osdb: 機器台帳情報の更新
+
+== 出力対象の機器分類選択 ==
+hp -> os: 機器分類の出力対象選択を開く
+os -> os: 出力対象の機器分類を選択
+note right os: 選択可能な数量はシステム管理者が設定
+os -> os: 更新決定
+os -> osdb: 出力対象の機器分類情報の更新
+osdb -> osdb: 出力対象の機器分類情報の更新
+
+== (p2)部門と診療科の紐付け ==
+hp -> os: 部門と診療科の紐付けを開く
+os -> os: 部門と診療科の紐付けを設定
+os -> os: 更新決定
+os -> osdb: 部門と診療科の紐付け情報の更新
+osdb -> osdb: 部門マスタの更新
+
+@enduml

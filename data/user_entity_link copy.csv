@@ -1,0 +1,4 @@
+entity_type,entity_relation_id,entity_name,entity_address_postal_code,entity_address_prefecture,entity_address_city,entity_address_line1,entity_address_line2,entity_phone_number,notification_email_list,count_reportout_classification,analiris_classification_level,regdate,lastupdate
+1,1,東京医科大学,160-8402,東京都,新宿区,新宿6-1-1,,03-3351-6141,"[\"info@juntendo.ac.jp\"]",5,1,2025-07-14 18:00:00,2025-07-14 18:00:00
+1,4,愛知医科大学,480-1195,愛知県,長久手市,岩作雁又１番地１,,0561-62-3311,"[\"info@aichi-med-u.ac.jp\",\"admin@aichi-med-u.ac.jp\"]",5,1,2025-07-14 18:00:00,2025-07-14 18:00:00
+1,5,順天堂医院,113-8431,東京都,文京区,本郷3-1-3,,03-3813-3111,"[\"info@tokyo-med.ac.jp\"]",5,1,2025-07-14 18:00:00,2025-07-14 18:00:00

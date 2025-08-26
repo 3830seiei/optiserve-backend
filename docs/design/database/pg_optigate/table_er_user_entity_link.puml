@@ -1,0 +1,43 @@
+@startuml
+'-------------------------------------------
+'Table Name  : user_entity_link
+'Description : ユーザーと組織（医療機関・ディーラー・メーカー）の紐付け
+'
+'[ChangeLog]
+
+'  v1.0.0 (2025-06-27)
+'  - [H.Miyazawa] OptiServe用のデータベース設計
+
+'  v1.1.0 (2025-07-10)
+'  - [H.Miyazawa] インデックス情報及び外部キー情報を追加
+
+'  v1.2.0 (2025-08-22)
+'  - [H.Miyazawa] ユーザーIDをintegerからtextに変更。
+
+'[Note]
+'  - 2025-08-22 : generate_dbdesign_artifacts.pyによる自動生成
+'-------------------------------------------
+hide circle
+
+entity "user_entity_link" as e01 {
+  * entity_type : Integer
+  * entity_relation_id : Integer
+
+  --
+  * entity_name : Text
+    entity_address_postal_code : Text
+    entity_address_prefecture : Text
+    entity_address_city : Text
+    entity_address_line1 : Text
+    entity_address_line2 : Text
+    entity_phone_number : Text
+  * notification_email_list : JSON
+  * count_reportout_classification : Integer
+  * analiris_classification_level : Integer
+  * reg_user_id : Text
+  * regdate : DateTime
+  * update_user_id : Text
+  * lastupdate : DateTime
+
+}
+@enduml

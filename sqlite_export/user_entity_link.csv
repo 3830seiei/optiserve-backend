@@ -1,0 +1,18 @@
+entity_type,entity_relation_id,entity_name,entity_address_postal_code,entity_address_prefecture,entity_address_city,entity_address_line1,entity_address_line2,entity_phone_number,notification_email_list,count_reportout_classification,analiris_classification_level,regdate,lastupdate
+1,1,東京医科大学,160-8402,東京都,新宿区,新宿6-1-1,,03-3351-6141,"[""info@juntendo.ac.jp""]",5,1,2025-07-14 18:00:00,2025-07-14 18:00:00
+1,4,愛知医科大学,480-1195,愛知県,長久手市,岩作雁又１番地１,,0561-62-3311,"[""info@aichi-med-u.ac.jp"",""admin@aichi-med-u.ac.jp""]",5,1,2025-07-14 18:00:00,2025-07-14 18:00:00
+1,5,順天堂医院,113-8431,東京都,文京区,本郷3-1-3,,03-3813-3111,"[""info@tokyo-med.ac.jp""]",5,1,2025-07-14 18:00:00,2025-07-14 18:00:00
+1,7,テスト組織,,,,,,,"[""test@example.com""]",5,1,2025-08-07 14:11:46.156875,2025-08-07 14:11:46.156879
+1,8,pytest連携組織_r1gqpa,,,,,,,"[""pytest_4tteyl@example.com""]",5,2,2025-08-07 14:12:51.340007,2025-08-07 14:12:51.340010
+1,9,pytest連携組織_t5reve,,,,,,,"[""pytest_ww0lkt@example.com""]",5,2,2025-08-07 14:12:51.355746,2025-08-07 14:12:51.355749
+1,11,pytest連携組織_qmkzvd,,,,,,,"[""pytest_dhetim@example.com""]",5,2,2025-08-07 14:12:51.400663,2025-08-07 14:12:51.400665
+1,12,pytest連携組織_wrr08q,,,,,,,"[""pytest_z9q2ky@example.com""]",5,2,2025-08-07 14:13:19.135112,2025-08-07 14:13:19.135115
+1,13,更新済み_pytest連携組織_o9e56n,,,,,,,"[""pytest_yp4k1h@example.com""]",3,3,2025-08-07 14:13:19.151989,2025-08-07 14:13:19.157835
+1,14,pytest連携組織_dil4z1,,,,,,,"[""pytest_vn1jww@example.com""]",5,2,2025-08-07 14:13:19.168548,2025-08-07 14:13:19.168552
+1,16,pytest連携組織_c42q45,,,,,,,"[""pytest_rlbpvp@example.com""]",5,2,2025-08-07 14:13:44.736399,2025-08-07 14:13:44.736400
+1,17,更新済み_pytest連携組織_fibugv,,,,,,,"[""pytest_ua79rs@example.com""]",3,3,2025-08-07 14:13:44.748644,2025-08-07 14:13:44.752504
+1,18,pytest連携組織_r4h1wg,,,,,,,"[""pytest_fmo3a8@example.com""]",5,2,2025-08-07 14:13:44.759899,2025-08-07 14:13:44.759900
+1,6,pytest連携組織_a2y8cw,,,,,,,"[""pytest_ja7kgc@example.com""]",5,1,2025-08-07 14:13:54.530170,2025-08-07 14:13:54.530172
+1,19,pytest連携組織_vcawxi,,,,,,,"[""pytest_42rdxc@example.com""]",5,2,2025-08-07 14:13:54.553585,2025-08-07 14:13:54.553586
+1,20,更新済み_pytest連携組織_effi5s,,,,,,,"[""pytest_e0pvzl@example.com""]",3,3,2025-08-07 14:13:54.566379,2025-08-07 14:13:54.570312
+1,21,pytest連携組織_24yzfw,,,,,,,"[""pytest_nprlwx@example.com""]",5,2,2025-08-07 14:13:54.577701,2025-08-07 14:13:54.577702

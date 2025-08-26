@@ -1,0 +1,36 @@
+@startuml
+'-------------------------------------------
+'Table Name  : medical_equipment_ledger
+'Description : 医療機関別機器台帳（オンプレミス側PostgreSQLのtblhpmelistから集約されたデータ）
+'
+'[ChangeLog]
+
+'  v1.0.0 (2025-08-08)
+'  - [Claude Code] 機器台帳テーブル作成（オンプレミス側PostgreSQL機器台帳からの集約データ保管用）
+
+'  v1.0.1 (2025-08-22)
+'  - [H.Miyazawa] ユーザーIDをintegerからtextに変更。
+
+'[Note]
+'  - 2025-08-22 : generate_dbdesign_artifacts.pyによる自動生成
+'-------------------------------------------
+hide circle
+
+entity "medical_equipment_ledger" as e01 {
+  * ledger_id : Integer
+
+  --
+  * medical_id : Integer
+  * model_number : Text
+    product_name : Text
+    maker_name : Text
+    classification_id : Integer
+  * stock_quantity : Integer
+  * is_included : Boolean
+  * reg_user_id : Text
+  * regdate : DateTime
+  * update_user_id : Text
+  * lastupdate : DateTime
+
+}
+@enduml

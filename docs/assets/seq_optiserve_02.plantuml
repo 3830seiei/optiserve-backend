@@ -1,0 +1,30 @@
+@startuml
+'------------------------------------------------
+' Title: OptiServe Dealer User Login
+'        ディーラーユーザーのログイン
+' Date: 2025-03-19
+' Author: H.Miyazawa
+' ChangeLog:
+'    2025-03-19: First Edition
+'------------------------------------------------
+hide footbox
+actor Dealer as dl
+participant "OptiServe" as os
+entity "OptiServe DB" as osdb
+
+dl -> os: ログイン
+os -> osdb: ログイン情報の照会
+osdb -> osdb: ユーザーマスタの確認
+alt ログイン成功
+    osdb --> os: ログイン情報の返却\n利用権限を持つ医療機関も提供
+    os -> os: 医療機関選択画面を表示
+    os -> dl: 医療機関の選択を要求
+    dl --> os: 医療機関の選択
+    os -> os: 対象医療機関のメニュー表示
+    note right os: 必要ならDB問合せを行い、\nメニューを動的に表示
+else ログイン失敗
+    osdb --> os: ログイン情報の返却
+    os -> os: ログイン失敗のメッセージ表示
+end
+note right os: パスワードを忘れた場合の対応として\nKintoneのパスワード再設定のメール送信機能を利用
+@enduml

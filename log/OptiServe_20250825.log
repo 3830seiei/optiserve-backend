@@ -1,0 +1,54 @@
+[2025-08-25 14:47:20][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-25 14:47:28][I][src.routers.facilities.create_facility] 医療機関作成開始: pytest病院_0fxu2t
+[2025-08-25 14:47:28][D][src.routers.facilities.create_facility] リクエストデータ: {'medical_name': 'pytest病院_0fxu2t', 'address_postal_code': '530-0001', 'address_prefecture': '大阪府', 'address_city': '大阪市北区', 'address_line1': 'テスト区2-2-2', 'address_line2': None, 'phone_number': '02-7895-3841'}
+[2025-08-25 14:47:28][D][src.routers.facilities.create_facility] DBオブジェクト作成開始
+[2025-08-25 14:47:28][D][src.routers.facilities.create_facility] DBオブジェクト作成完了
+[2025-08-25 14:47:28][D][src.routers.facilities.create_facility] DB保存処理開始
+[2025-08-25 14:47:28][D][src.routers.facilities.create_facility] DB保存処理完了
+[2025-08-25 14:47:28][I][src.routers.facilities.create_facility] 医療機関作成完了: ID=7
+[2025-08-25 14:47:28][I][src.routers.facilities.create_facility] 医療機関作成開始: pytest病院_j20563
+[2025-08-25 14:47:28][D][src.routers.facilities.create_facility] リクエストデータ: {'medical_name': 'pytest病院_j20563', 'address_postal_code': None, 'address_prefecture': None, 'address_city': None, 'address_line1': None, 'address_line2': None, 'phone_number': None}
+[2025-08-25 14:47:28][D][src.routers.facilities.create_facility] DBオブジェクト作成開始
+[2025-08-25 14:47:28][D][src.routers.facilities.create_facility] DBオブジェクト作成完了
+[2025-08-25 14:47:28][D][src.routers.facilities.create_facility] DB保存処理開始
+[2025-08-25 14:47:28][D][src.routers.facilities.create_facility] DB保存処理完了
+[2025-08-25 14:47:28][I][src.routers.facilities.create_facility] 医療機関作成完了: ID=8
+[2025-08-25 14:47:28][I][src.routers.facilities.create_facility] 医療機関作成開始: pytest病院_8muula
+[2025-08-25 14:47:28][D][src.routers.facilities.create_facility] リクエストデータ: {'medical_name': 'pytest病院_8muula', 'address_postal_code': '100-0001', 'address_prefecture': '東京都', 'address_city': '千代田区', 'address_line1': 'テスト町1-1-1', 'address_line2': None, 'phone_number': '04-7778-3325'}
+[2025-08-25 14:47:28][D][src.routers.facilities.create_facility] DBオブジェクト作成開始
+[2025-08-25 14:47:28][D][src.routers.facilities.create_facility] DBオブジェクト作成完了
+[2025-08-25 14:47:28][D][src.routers.facilities.create_facility] DB保存処理開始
+[2025-08-25 14:47:28][D][src.routers.facilities.create_facility] DB保存処理完了
+[2025-08-25 14:47:28][I][src.routers.facilities.create_facility] 医療機関作成完了: ID=9
+[2025-08-25 14:47:28][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_iitipp
+[2025-08-25 14:47:28][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 6, 'entity_name': 'pytest連携組織_iitipp', 'notification_email_list': 'pytest_hehcix@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-25 14:47:28][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-25 14:47:28][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-25 14:47:28][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-25 14:47:28][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理完了
+[2025-08-25 14:47:28][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成完了: entity_type=1, entity_relation_id=6
+[2025-08-25 14:47:28][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: テスト組織
+[2025-08-25 14:47:28][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 2, 'entity_relation_id': 6, 'entity_name': 'テスト組織', 'notification_email_list': 'pytest_8ue258@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-25 14:47:28][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: テスト組織
+[2025-08-25 14:47:28][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 99999, 'entity_name': 'テスト組織', 'notification_email_list': 'pytest_bexg50@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-25 14:47:28][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_031jy0
+[2025-08-25 14:47:28][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 8, 'entity_name': 'pytest連携組織_031jy0', 'notification_email_list': 'pytest_1nbfn0@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 2}
+[2025-08-25 14:47:28][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-25 14:47:28][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-25 14:47:28][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-25 14:47:28][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理完了
+[2025-08-25 14:47:28][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成完了: entity_type=1, entity_relation_id=8
+[2025-08-25 14:47:28][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_mn14rh
+[2025-08-25 14:47:28][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 9, 'entity_name': 'pytest連携組織_mn14rh', 'notification_email_list': 'pytest_qo1ycg@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 2}
+[2025-08-25 14:47:28][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-25 14:47:28][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-25 14:47:28][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-25 14:47:28][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理完了
+[2025-08-25 14:47:28][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成完了: entity_type=1, entity_relation_id=9
+[2025-08-25 14:47:28][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_ac4x67
+[2025-08-25 14:47:28][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 7, 'entity_name': 'pytest連携組織_ac4x67', 'notification_email_list': 'pytest_ld4egf@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 2}
+[2025-08-25 14:47:28][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-25 14:47:28][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-25 14:47:28][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-25 14:47:28][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理完了
+[2025-08-25 14:47:28][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成完了: entity_type=1, entity_relation_id=7

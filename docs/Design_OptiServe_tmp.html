@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Design_OptiServe.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+<link rel="stylesheet" href="file:///c%3A/Users/smds/.vscode/markdown/markdownpdf-styles.css" type="text/css">
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h1 id="%E5%9F%BA%E6%9C%AC%E8%A8%AD%E8%A8%88%E6%9B%B8smds%E9%A1%A7%E5%AE%A2%E7%AE%A1%E7%90%86%E3%83%84%E3%83%BC%E3%83%AB">基本設計書）SMDS顧客管理ツール</h1>
+<p><strong>修正の履歴</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Version</th>
+<th style="text-align:left">更新日</th>
+<th style="text-align:left">内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1.0.0</td>
+<td style="text-align:left">2025-03-05</td>
+<td style="text-align:left">新規作成</td>
+</tr>
+<tr>
+<td style="text-align:center">1.1.0</td>
+<td style="text-align:left">2025-04-04</td>
+<td style="text-align:left">「3-8. 医療機関ユーザー＞機器台帳のメンテナンス」に<br>機器分類情報を追加</td>
+</tr>
+<tr>
+<td style="text-align:center">1.2.0</td>
+<td style="text-align:left">2025-06-18</td>
+<td style="text-align:left">PoC版の画面は別途画面仕様書を作成し、この仕様書の範囲外とした</td>
+</tr>
+</tbody>
+</table>
+<h2 id="1-%E7%9B%AE%E7%9A%84%E3%81%A8%E6%A6%82%E8%A6%81">1. 目的と概要</h2>
+<h3 id="1-1-%E7%9B%AE%E7%9A%84">1-1. 目的</h3>
+<p>本サービスは、SMDSの顧客がより満足度の高い情報を得る為のオンライン・プラットフォームを提供し顧客満足度を高める。また、顧客との取引管理の効率化を行うことで、運営側の作業時間短縮とミスの削減を目指す。</p>
+<h3 id="1-2-%E6%A6%82%E8%A6%81">1-2. 概要</h3>
+<ul>
+<li>
+<p>SMDSプロジェクトは主に2つのフェーズに分かれる。この仕様書及び構築範囲はPhase1のみとなるが、その後のPhase2対応に向けて、現状明確になっている情報は記載しておく。ただし、情報は変更になる可能性もあので、参照にとどめること。</p>
+<ul>
+<li>Phase1. 医療機関からの情報提供に対してレポートを作成して提供</li>
+<li>Phase2(p2). 医療機関から集めた情報をメーカーに対して販売し、医療機関にポイントにてフィードバック</li>
+</ul>
+</li>
+<li>
+<p>本サービスの利用者には「運用側スタッフ」「医療機関（ディーラー含む）」「医療器機販売メーカー」が存在し、それぞれで運用が異なる。</p>
+<ul>
+<li><code>運用側スタッフ</code>: アカウント管理、医療機関へのレポートの提供、(p2)顧客の掛け管理</li>
+<li><code>医療機関</code>: 医療機関の情報提供、提供してもらうレポートのカスタマイズ、(p2)ポイントの運用</li>
+<li>(p2)<code>メーカー</code>: 提供してもらう医療機関の選択、請求・支払い管理</li>
+</ul>
+</li>
+</ul>
+<div style="page-break-before: always;"></div>
+<h2 id="2-%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E6%A7%8B%E6%88%90">2. システム構成</h2>
+<h3 id="2-1-smds%E5%85%A8%E4%BD%93%E3%81%AE%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E6%A7%8B%E6%88%90">2-1. SMDS全体のシステム構成</h3>
+<ul>
+<li>OptiServeはSMDSプロジェクト全体の中で、顧客との窓口部分を担当するサブシステムとなる。</li>
+<li>OptiServeと他サブシステム間はkintone APIを通じて行なわれるが、他サブシステムからOptiServeに対して問合せ・データ登録が行なわれるが、その逆のルートは存在しない。</li>
+</ul>
+<p><img src="file:///c:/Users/smds/develop/smds_optiserve/docs/assets/Design_SystemComponents_v4.png" alt="システム構成図">
+システム構成図（project_smdsのドキュメントを参照）</p>
+<h3 id="2-2-%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%82%A2%E3%83%BC%E3%82%AD%E3%83%86%E3%82%AF%E3%83%81%E3%83%A3">2-2. システムアーキテクチャ</h3>
+<ul>
+<li>社外のアクセスも想定して、Kintoneを利用して構築。</li>
+<li><strong>Kintoneのメリット</strong>
+<ul>
+<li>社内実績あり</li>
+<li>基本的な機能はノーコードで構築可能（速やかなサービスイン）</li>
+</ul>
+</li>
+<li><strong>Kintoneのデメリット</strong>
+<ul>
+<li>顧客数に応じてランニングコストが増える</li>
+<li>Kintoneがローコードサービスのため、他のプラットフォームへの引越が出来ない</li>
+</ul>
+</li>
+</ul>
+<pre class="hljs"><code><div>サービスインを想定して、まずはKintoneで作成するが、仮に費用負担を望めない医療機関が100アカウントになった場合、年間のランニングコストは180万円となる為、現実的ではない。
+その為、今後のアカウント数増を想定し、サービスイン後に、awsへのプラットフォーム引越し想定した見直しを進める必要あり。
+</div></code></pre>
+<h3 id="2-3-%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%83%95%E3%83%AD%E3%83%BC">2-3. システムフロー</h3>
+<h4 id="1-%E5%8C%BB%E7%99%82%E5%99%A8%E6%A9%9F%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E3%82%82%E3%81%97%E3%81%8F%E3%81%AF%E3%83%A1%E3%83%BC%E3%82%AB%E3%83%BC%E3%81%AE%E3%83%AD%E3%82%B0%E3%82%A4%E3%83%B3">1. 医療器機ユーザー（もしくはメーカー）のログイン</h4>
+<p><img src="file:///c:/Users/smds/develop/smds_optiserve/docs/assets/seq_optiserve_01.png" alt="医療機関ユーザーログイン"></p>
+<div style="page-break-before: always;"></div>
+<h4 id="2-%E3%83%87%E3%82%A3%E3%83%BC%E3%83%A9%E3%83%BC%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E3%81%AE%E3%83%AD%E3%82%B0%E3%82%A4%E3%83%B3">2. ディーラーユーザーのログイン</h4>
+<p><img src="file:///c:/Users/smds/develop/smds_optiserve/docs/assets/seq_optiserve_02.png" alt="ディーラーユーザーログイン"></p>
+<div style="page-break-before: always;"></div>
+<h4 id="3-%E5%8C%BB%E7%99%82%E6%A9%9F%E9%96%A2%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E3%81%AE%E8%BF%BD%E5%8A%A0">3. 医療機関ユーザーの追加</h4>
+<p><img src="file:///c:/Users/smds/develop/smds_optiserve/docs/assets/seq_optiserve_03.png" alt="医療機関ユーザーの追加"></p>
+<div style="page-break-before: always;"></div>
+<h4 id="4-%E3%83%87%E3%82%A3%E3%83%BC%E3%83%A9%E3%83%BC%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E3%81%AE%E8%BF%BD%E5%8A%A0">4. ディーラーユーザーの追加</h4>
+<p><img src="file:///c:/Users/smds/develop/smds_optiserve/docs/assets/seq_optiserve_04.png" alt="ディーラーユーザーの追加"></p>
+<div style="page-break-before: always;"></div>
+<h4 id="5-%E6%8B%85%E5%BD%93%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E3%81%AE%E5%A4%89%E6%9B%B4">5. 担当ユーザーの変更</h4>
+<ul>
+<li>kintoneの制約上、キーとなるメールアドレスの変更には管理者権限が必要となり、ユーザーが直接変更することは出来ない。その為、変更依頼をメールで依頼してもらい、管理者が対応する</li>
+</ul>
+<p><img src="file:///c:/Users/smds/develop/smds_optiserve/docs/assets/seq_optiserve_05.png" alt="担当ユーザーの変更"></p>
+<div style="page-break-before: always;"></div>
+<h4 id="6-%E5%8C%BB%E7%99%82%E6%A9%9F%E9%96%A2%E3%81%AE%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%A2%E3%83%83%E3%83%97%E3%83%AD%E3%83%BC%E3%83%89">6. 医療機関のファイルアップロード</h4>
+<p><img src="file:///c:/Users/smds/develop/smds_optiserve/docs/assets/seq_optiserve_11.png" alt="医療機関のファイルアップロード"></p>
+<div style="page-break-before: always;"></div>
+<h4 id="7-%E5%8C%BB%E7%99%82%E6%A9%9F%E9%96%A2%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E3%81%AE%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%A1%E3%83%B3%E3%83%86%E3%83%8A%E3%83%B3%E3%82%B9">7. 医療機関ユーザーのマスタメンテナンス</h4>
+<p><img src="file:///c:/Users/smds/develop/smds_optiserve/docs/assets/seq_optiserve_12.png" alt="医療機関ユーザーのマスタメンテナンス"></p>
+<div style="page-break-before: always;"></div>
+<h4 id="8-%E3%83%A1%E3%83%BC%E3%82%AB%E3%83%BC%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E3%81%AE%E3%83%9E%E3%82%B9%E3%82%BF%E3%83%A1%E3%83%B3%E3%83%86%E3%83%8A%E3%83%B3%E3%82%B9">8. メーカーユーザーのマスタメンテナンス</h4>
+<p><img src="file:///c:/Users/smds/develop/smds_optiserve/docs/assets/seq_optiserve_13.png" alt="メーカーユーザーのマスタメンテナンス"></p>
+<div style="page-break-before: always;"></div>
+<h4 id="9-%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%88%E3%81%AE%E4%BD%9C%E6%88%90%E3%81%A8%E5%85%AC%E9%96%8B">9. レポートの作成と公開</h4>
+<p><img src="file:///c:/Users/smds/develop/smds_optiserve/docs/assets/seq_optiserve_14.png" alt="レポートの作成と公開"></p>
+<div style="page-break-before: always;"></div>
+<h4 id="10-%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%88%E3%81%AE%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89">10. レポートのダウンロード</h4>
+<p><img src="file:///c:/Users/smds/develop/smds_optiserve/docs/assets/seq_optiserve_15.png" alt="レポートのダウンロード"></p>
+<div style="page-break-before: always;"></div>
+<h2 id="3-%E6%A9%9F%E8%83%BD%E8%A8%AD%E8%A8%88">3. 機能設計</h2>
+<ul>
+<li>各機能別の画面を中心とした機能設計</li>
+<li>ログイン等はKintoneの標準機能をそのまま利用する為、対象外</li>
+<li>Phase1を対象とした</li>
+</ul>
+<h3 id="3-1-%E7%AE%A1%E7%90%86%E8%80%85%EF%BC%9E%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%81%AE%E4%BB%AE%E7%99%BB%E9%8C%B2">3-1. 管理者＞アカウントの仮登録</h3>
+<p><strong>001_管理者_アカウント仮登録.pdf</strong> 参照</p>
+<h3 id="3-2-%E7%AE%A1%E7%90%86%E8%80%85%EF%BC%9E%E3%83%AC%E3%83%9D%E3%83%BC%E3%83%88%E5%87%BA%E5%8A%9B%E3%83%A9%E3%83%B3%E3%82%AF%E6%95%B0%E8%A8%AD%E5%AE%9A">3-2. 管理者＞レポート出力ランク数設定</h3>
+<p><strong>002_管理者_レポート出力ランク数設定.pdf</strong> 参照</p>
+<div style="page-break-before: always;"></div>
+<h3 id="3-3-%E7%AE%A1%E7%90%86%E8%80%85%EF%BC%9Etableau%E9%96%B2%E8%A6%A7%E5%8C%BB%E7%99%82%E6%A9%9F%E9%96%A2%E6%95%B0%E8%A8%AD%E5%AE%9A">3-3. 管理者＞Tableau閲覧医療機関数設定</h3>
+<h4 id="%E7%94%BB%E9%9D%A2%E8%A8%AD%E5%AE%9Atableau%E9%96%B2%E8%A6%A7%E5%8C%BB%E7%99%82%E6%A9%9F%E9%96%A2%E6%95%B0%E8%A8%AD%E5%AE%9A">画面設定：Tableau閲覧医療機関数設定</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">項目名</th>
+<th style="text-align:left">種類</th>
+<th style="text-align:center">必須</th>
+<th style="text-align:left">入力制限</th>
+<th style="text-align:left">備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">検索キー</td>
+<td style="text-align:left">テキストボックス</td>
+<td style="text-align:center">任意</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">入力後は、メーカーコード、名称で検索（文字列は任意検索、正規表現は不要）し表示対象を絞る</td>
+</tr>
+<tr>
+<td style="text-align:left">メーカー情報</td>
+<td style="text-align:left">リスト</td>
+<td style="text-align:center">-</td>
+<td style="text-align:left">単行選択</td>
+<td style="text-align:left">メーカーコード、メーカー名、出力ランク数</td>
+</tr>
+<tr>
+<td style="text-align:left">メーカーコード</td>
+<td style="text-align:left">ラベル</td>
+<td style="text-align:center">-</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">リストで選択したものを表示</td>
+</tr>
+<tr>
+<td style="text-align:left">メーカー名</td>
+<td style="text-align:left">ラベル</td>
+<td style="text-align:center">-</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">リストで選択したものを表示</td>
+</tr>
+<tr>
+<td style="text-align:left">現在閲覧可能医療機関数</td>
+<td style="text-align:left">ラベル</td>
+<td style="text-align:center">-</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">リストで選択したものを表示</td>
+</tr>
+<tr>
+<td style="text-align:left">変更後閲覧可能医療機関数</td>
+<td style="text-align:left">数値</td>
+<td style="text-align:center">-</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">変更</td>
+<td style="text-align:left">ボタン</td>
+<td style="text-align:center">-</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">押下で閲覧医療機関数更新処理を行なう</td>
+</tr>
+<tr>
+<td style="text-align:left">閉じる</td>
+<td style="text-align:left">ボタン</td>
+<td style="text-align:center">-</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">押下でフォームを閉じる</td>
+</tr>
+</tbody>
+</table>
+<h4 id="%E5%87%A6%E7%90%86%E5%88%9D%E6%9C%9F%E5%87%A6%E7%90%86">処理：初期処理</h4>
+<ol>
+<li>ユーザーマスタに登録されているメーカーコードをキーとして<code>ComInfo</code>の情報を取得</li>
+<li>メーカー情報リストに表示</li>
+</ol>
+<h4 id="%E5%87%A6%E7%90%86%E9%96%B2%E8%A6%A7%E5%8C%BB%E7%99%82%E6%A9%9F%E9%96%A2%E6%95%B0%E6%9B%B4%E6%96%B0%E5%87%A6%E7%90%86">処理：閲覧医療機関数更新処理</h4>
+<ol>
+<li><code>ComInfo</code>の<code>rankCount:出力ランク数</code>の情報を更新</li>
+</ol>
+<div style="page-break-before: always;"></div>
+<h3 id="3-4-%E5%8C%BB%E7%99%82%E6%A9%9F%E9%96%A2%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%EF%BC%9E%E3%82%A2%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%81%AE%E5%9F%BA%E6%9C%AC%E6%83%85%E5%A0%B1%E7%99%BB%E9%8C%B2">3-4. 医療機関ユーザー＞アカウントの基本情報登録</h3>
+<p><strong>003_顧客_アカウントの基本情報.pdf</strong> 参照</p>
+<div style="page-break-before: always;"></div>
+<h3 id="3-5-%E5%8C%BB%E7%99%82%E6%A9%9F%E9%96%A2%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%EF%BC%9E%E3%83%87%E3%82%A3%E3%83%BC%E3%83%A9%E3%83%BC%E6%A8%A9%E9%99%90%E3%81%AE%E7%99%BB%E9%8C%B2">3-5. 医療機関ユーザー＞ディーラー権限の登録</h3>
+<h4 id="%E7%94%BB%E9%9D%A2%E8%A8%AD%E5%AE%9A%E3%83%87%E3%82%A3%E3%83%BC%E3%83%A9%E3%83%BC%E6%A8%A9%E9%99%90%E3%81%AE%E7%99%BB%E9%8C%B2">画面設定：ディーラー権限の登録</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">項目名</th>
+<th style="text-align:left">種類</th>
+<th style="text-align:center">必須</th>
+<th style="text-align:left">入力制限</th>
+<th style="text-align:left">備考</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">ディーラーメールアドレス</td>
+<td style="text-align:left">テキストボックス</td>
+<td style="text-align:center">必須</td>
+<td style="text-align:left">メールアドレスとして成立</td>
+<td style="text-align:left">権限付与するメールアドレスを設定</td>
+</tr>
+<tr>
+<td style="text-align:left">付与権限</td>
+<td style="text-align:left">リストボックス</td>
+<td style="text-align:center">必須</td>
+<td style="text-align:left">1:ダウンロードサイト閲覧<br>2:マスタ情報の設定<br>3:全機能利用<br>9:無し</td>
+<td style="text-align:left">いずれかを選択</td>
+</tr>
+<tr>
+<td style="text-align:left">設定理由</td>
+<td style="text-align:left">複数テキストボックス</td>
+<td style="text-align:center">必須</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">理由は必ず記載する</td>
+</tr>
+<tr>
+<td style="text-align:left">登録ディーラー一覧</td>
+<td style="text-align:left">リストボックス</td>
+<td style="text-align:center">-</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">メールアドレス、権限をリスト表示、単行選択可能<br>選択時は入力フィールドに値をセット</td>
+</tr>
+<tr>
+<td style="text-align:left">新規</td>
+<td style="text-align:left">ボタン</td>
+<td style="text-align:center">-</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">押下で上記入力フィールドをクリア</td>
+</tr>
+<tr>
+<td style="text-align:left">更新</td>
+<td style="text-align:left">ボタン</td>
+<td style="text-align:center">-</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">押下でディーラー情報登録処理を実行</td>
+</tr>
+<tr>
+<td style="text-align:left">閉じる</td>
+<td style="text-align:left">ボタン</td>
+<td style="text-align:center">-</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">押下でフォームを閉じる</td>
+</tr>
+</tbody>
+</table>
+<h4 id="%E5%87%A6%E7%90%86%E5%88%9D%E6%9C%9F%E5%87%A6%E7%90%86">処理：初期処理</h4>
+<ol>
+<li><code>ディーラー権限マスタ</code>を取得</li>
+<li>取得した情報を付与権限リストにセット</li>
+</ol>
+<h4 id="%E5%87%A6%E7%90%86%E3%83%87%E3%82%A3%E3%83%BC%E3%83%A9%E3%83%BC%E6%83%85%E5%A0%B1%E7%99%BB%E9%8C%B2%E5%87%A6%E7%90%86">処理：ディーラー情報登録処理</h4>
+<ol>
+<li>メールアドレスの有効性チェック
+<ul>
+<li>ユーザーマスタに登録済み</li>
+<li>ディーラーアカウントであること</li>
+</ul>
+</li>
+<li><code>ディーラー権限マスタ</code>に登録（追加・更新）
+<ul>
+<li>権限「なし」を選択した場合、レコードの削除は行なわずに理由とセットで残しておく</li>
+</ul>
+</li>
+</ol>
+<div style="page-break-before: always;"></div>
+<h3 id="3-6-%E5%8C%BB%E7%99%82%E6%A9%9F%E9%96%A2%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%EF%BC%9E%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E3%82%A2%E3%83%83%E3%83%97%E3%83%AD%E3%83%BC%E3%83%89">3-6. 医療機関ユーザー＞データのアップロード</h3>
+<p><strong>004_顧客_ファイルアップロード.pdf</strong> 参照</p>
+<h3 id="3-7-%E5%8C%BB%E7%99%82%E6%A9%9F%E9%96%A2%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%EF%BC%9E%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89">3-7. 医療機関ユーザー＞データのダウンロード</h3>
+<p><strong>005_顧客_レポートダウンロード.pdf</strong> 参照</p>
+<h3 id="3-8-%E5%8C%BB%E7%99%82%E6%A9%9F%E9%96%A2%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%EF%BC%9E%E6%A9%9F%E5%99%A8%E5%8F%B0%E5%B8%B3%E3%81%AE%E3%83%A1%E3%83%B3%E3%83%86%E3%83%8A%E3%83%B3%E3%82%B9">3-8. 医療機関ユーザー＞機器台帳のメンテナンス</h3>
+<p><strong>006_顧客_機器台帳メンテナンス.pdf</strong> 参照</p>
+<h3 id="3-9-%E5%8C%BB%E7%99%82%E6%A9%9F%E9%96%A2%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%EF%BC%9E%E5%87%BA%E5%8A%9B%E5%AF%BE%E8%B1%A1%E3%81%AE%E6%A9%9F%E5%99%A8%E5%88%86%E9%A1%9E%E3%81%AE%E3%83%A1%E3%83%B3%E3%83%86%E3%83%8A%E3%83%B3%E3%82%B9">3-9. 医療機関ユーザー＞出力対象の機器分類のメンテナンス</h3>
+<p><strong>007_顧客_機器分類候補メンテナンス.pdf</strong> 参照</p>
+<div style="page-break-before: always;"></div>
+<h3 id="3-10-%E3%83%90%E3%83%83%E3%82%AF%E3%82%A8%E3%83%B3%E3%83%89%E3%82%B5%E3%83%BC%E3%83%93%E3%82%B9">3-10. バックエンドサービス</h3>
+<p>バックエンドサービスはkintoneの機能ではなく、smds_datahub及びsmda_datarefineryが行なう。ここではOptiServeのAPI連携に関係するものだけを記載。</p>
+<ul>
+<li>kintone APIを利用してマスタ情報の更新処理(日次処理)
+<ul>
+<li>医療機関マスタ</li>
+<li>ディーラーマスタ</li>
+<li>メーカーマスタ</li>
+<li>機器分類マスタ</li>
+<li>機器台帳情報</li>
+</ul>
+</li>
+<li>kintone APIを利用してkintone側データの取得処理（月次処理）
+<ul>
+<li>データのクリーニング及び集計前に取得</li>
+<li>関連するデータは全て取得</li>
+</ul>
+</li>
+<li>医療機関アップロードファイルのダウンロード（日次処理）
+<ul>
+<li>公開は月1回だが、月初から毎日チェックして存在したらダウンロード</li>
+<li>ダウンロード後も上書き更新される可能性を考慮してチェックを継続</li>
+<li>ダウンロードしたファイルはRAWテーブルに登録</li>
+<li>ダウンロードしたファイルにエラーが存在する場合は通知</li>
+</ul>
+</li>
+<li>レポートのアップロードと通知(月次処理)
+<ul>
+<li>レポート作成前にkintone側情報を取得</li>
+<li>レポートのアップロードが終了したら対象者にメール通知を実施</li>
+</ul>
+</li>
+</ul>
+<div style="page-break-before: always;"></div>
+<h2 id="4-%E3%83%87%E3%83%BC%E3%82%BF%E8%A8%AD%E8%A8%88">4. データ設計</h2>
+<p>作成されるデータには2種類が存在する。</p>
+<ol>
+<li>画面等と連動するKintone独自のデータ</li>
+<li>smds_datahub, smds_datarefineryのデータからの同期処理で登録されるデータ（問合せのみ）</li>
+</ol>
+<h3 id="4-1-%E3%83%87%E3%83%BC%E3%82%BF%E3%83%99%E3%83%BC%E3%82%B9%E8%A8%AD%E8%A8%88">4-1. データベース設計</h3>
+<ul>
+<li>基本的なテーブル構成はER図参照</li>
+<li>各テーブルには作成日、作成者、更新日、更新者等の項目は明記されていないので追加</li>
+<li>kintoneの構成的に必要なレコード情報あれば、追加・見直しを行なうこと</li>
+</ul>
+<div style="page-break-before: always;"></div>
+<p><img src="file:///c:/Users/smds/develop/smds_optiserve/docs/assets/tabledesign_optiserve.png" alt="ER図"></p>
+<div style="page-break-before: always;"></div>
+<p><img src="file:///c:/Users/smds/develop/smds_optiserve/docs/assets/tabledesign_optiserve_page2.png" alt="ER図 -page2"></p>
+<div style="page-break-before: always;"></div>
+<h3 id="4-2-%E3%83%87%E3%83%BC%E3%82%BF%E5%AE%B9%E9%87%8F">4-2. データ容量</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">データ内容</th>
+<th style="text-align:right">イニシャル件数</th>
+<th style="text-align:right">年間の増加件数</th>
+<th style="text-align:left">補足</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">アカウント情報</td>
+<td style="text-align:right">10</td>
+<td style="text-align:right">30</td>
+<td style="text-align:left">増えるならもっと増えてほしい</td>
+</tr>
+<tr>
+<td style="text-align:left">医療機関数</td>
+<td style="text-align:right">10</td>
+<td style="text-align:right">30</td>
+<td style="text-align:left">基本的にはアカウント情報と同程度<br>アカウントは1つの医療機関やディーラー、メーカーに対して複数登録可能</td>
+</tr>
+<tr>
+<td style="text-align:left">機器分類マスタ</td>
+<td style="text-align:right">50-500</td>
+<td style="text-align:right">0</td>
+<td style="text-align:left">1病院のみ500あるが、他は50前後<br>増加はほぼ無し</td>
+</tr>
+<tr>
+<td style="text-align:left">機器台帳（1病院あたり）</td>
+<td style="text-align:right">15,000</td>
+<td style="text-align:right">0</td>
+<td style="text-align:left">追加機器と破棄機器があるので<br>トータル数の大幅増は無い</td>
+</tr>
+</tbody>
+</table>
+<h2 id="5-%E9%81%8B%E7%94%A8%E3%83%97%E3%83%A9%E3%83%83%E3%83%88%E3%83%95%E3%82%A9%E3%83%BC%E3%83%A0">5. 運用プラットフォーム</h2>
+<ul>
+<li>OptiServeはSaaSだが、そのプラットフォームはKintoneを想定している。</li>
+<li>kintoneは八神のドメインではなく、独自の契約を想定。</li>
+<li>ただし、Kintoneは1,500円/月人の費用が発生する為、アカウントが増えることでランニングコストが膨らむ。</li>
+<li>サービスインを優先してまずはKintoneで構築するが、同時にawsでのSaaSの構築も検討しておく</li>
+</ul>
+<h2 id="6-%E3%82%B9%E3%82%B1%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB">6. スケジュール</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">期間(From)</th>
+<th style="text-align:left">機関(To)</th>
+<th style="text-align:left">作業</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">2025-03</td>
+<td style="text-align:left">2025-03</td>
+<td style="text-align:left">概要設計</td>
+</tr>
+<tr>
+<td style="text-align:left">2025-03</td>
+<td style="text-align:left">2025-03</td>
+<td style="text-align:left">Kintone等実現性の調査</td>
+</tr>
+<tr>
+<td style="text-align:left">2025-04</td>
+<td style="text-align:left">2025-06</td>
+<td style="text-align:left">PoC版の作成(FrontEnd)</td>
+</tr>
+<tr>
+<td style="text-align:left">2025-07</td>
+<td style="text-align:left">2025-09</td>
+<td style="text-align:left">一部ユーザーを含めてのPoC検証<br>オンプレ連携部分は手作業を想定</td>
+</tr>
+<tr>
+<td style="text-align:left">2025-07</td>
+<td style="text-align:left">2025-09</td>
+<td style="text-align:left">オンプレ連携機能の作成</td>
+</tr>
+<tr>
+<td style="text-align:left">2025-10</td>
+<td style="text-align:left">2025-11</td>
+<td style="text-align:left">本番に向けた見直し</td>
+</tr>
+<tr>
+<td style="text-align:left">2025-12</td>
+<td style="text-align:left">-</td>
+<td style="text-align:left">（仮）運用開始</td>
+</tr>
+</tbody>
+</table>
+<p>以上</p>
+
+</body>
+</html>

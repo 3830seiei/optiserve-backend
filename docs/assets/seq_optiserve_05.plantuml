@@ -1,0 +1,32 @@
+@startuml
+'------------------------------------------------
+' Title: OptiServe Change User
+'        ユーザーの担当者変更
+' Date: 2025-03-17
+' Author: H.Miyazawa
+' ChangeLog:
+'    2025-03-17: First Edition
+'------------------------------------------------
+hide footbox
+actor 旧ユーザー as hp1
+actor 新ユーザー as hp2
+actor システム管理者 as admin
+participant "OptiServe" as os
+entity "OptiServe DB" as osdb
+
+hp1 -> admin: ユーザー変更依頼
+admin -> os: ユーザー変更\n（旧ユーザーの情報は削除）
+os -> osdb: ユーザーキーの変更
+osdb -> osdb: ユーザーマスタの更新
+note over osdb: ディーラーの場合、病院との紐付け情報も削除される為、\n新ユーザーは医療機関に担当者変更の依頼を行なう
+osdb --> os: ユーザー変更結果の返却
+os -> os: ユーザー情報登録完了の\nメッセージ作成
+os -> hp2: ユーザー情報登録完了の\nメッセージ送信
+os --> admin: メッセージ送信のCC
+hp2 -> os: 初ログイン
+os -> os: パスワード変更
+os -> os: 基本情報の更新
+os -> osdb: ユーザーマスタの更新
+osdb -> osdb: ユーザーマスタの更新
+osdb --> os: ユーザー情報更新結果の返却
+@enduml

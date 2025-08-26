@@ -1,0 +1,56 @@
+@startuml
+'------------------------------------------------
+' Title: OptiServe Generate HpReport
+'        医療機関向けのレポートの作成と提供
+' Date: 2025-03-19
+' Author: H.Miyazawa
+' ChangeLog:
+'    2025-03-19: First Edition
+'------------------------------------------------
+hide footbox
+actor maker as mk
+participant "OptiServe" as os
+participant "OptiServe API" as osapi
+entity "OptiServe DB" as osdb
+participant "opsman" as op
+participant "datahub" as dh
+participant "datarefinery" as dr
+entity "datawarehouse" as dw
+
+== 月初処理 ==
+op -> dh: OptiServe情報取得指示
+loop ①アカウント情報 ②集計対象の医療機器 ③機器分類の出力対象
+    dh -> osapi: OptiServe更新情報取得\nParam:前回取得日時
+    osapi -> osdb: OptiServe更新情報取得
+    osdb --> osapi: OptiServe更新情報取得結果\n(取得日時情報込み)
+    osapi -> dh: OptiServe更新情報取得結果\n(取得日時情報込み、対象0件でも取得日時はリターン)
+    dh -> dw: OptiServe更新情報取得結果登録
+    dw -> dw: マスタ情報更新
+    dw --> dh: マスタ情報更新結果
+end
+dh --> op: OptiServe情報取得結果報告
+op -> op: レポート作成可能と判断
+
+== レポート作成 ==
+op -> dr: レポート作成指示
+loop 病院単位
+    dr -> dr: レポート作成
+    alt レポート作成成功
+        dr -> osapi: レポート提供指示
+        osapi -> os: レポートアップロード
+        os -> os: レポート公開
+        osapi -> osdb: レポート公開情報登録
+        osdb -> osdb: レポート公開情報登録
+        osdb --> osapi: レポート公開情報登録結果応答
+        osapi -> osapi: レポート提供結果情報を\nメール登録者に通知
+        osapi --> dr: レポート提供結果応答
+        dr -> dr: レポート提供結果をログ登録\n(成功)
+    else レポート作成失敗
+        dr -> dr: レポート作成失敗をログ登録\n(失敗)
+        dr -> dr: 管理者にレポート失敗を通知
+        note right dr: レポート作成失敗の通知を受けた場合は\n要因を調査し手動で再実行\ndatarefineryへ病院指定でAPIによる作成要求
+    end
+end
+dr --> op: レポート提供結果報告
+op -> op: 来月のOptiServe情報取得指示\n及びレポート作成指示を予約
+@enduml

@@ -1,0 +1,39 @@
+@startuml
+'-------------------------------------------
+'Table Name  : report_publication_log
+'Description : 医療機関向けレポートの公開履歴テーブル
+'
+'[ChangeLog]
+
+'  v1.0.0 (2025-06-27)
+'  - [H.Miyazawa] OptiServe用のデータベース設計
+
+'  v1.1.0 (2025-08-13)
+'  - [H.Miyazawa] 登録、更新のユーザーIDを追加
+
+'  v1.2.0 (2025-08-22)
+'  - [H.Miyazawa] ユーザーIDをintegerからtextに変更。
+
+'[Note]
+'  - 2025-08-22 : generate_dbdesign_artifacts.pyによる自動生成
+'-------------------------------------------
+hide circle
+
+entity "report_publication_log" as e01 {
+  * publication_id : Integer
+
+  --
+  * medical_id : Integer
+  * publication_ym : Text
+  * file_type : Integer
+  * file_name : Text
+  * upload_datetime : DateTime
+  * download_user_id : Text
+    download_datetime : DateTime
+  * reg_user_id : Text
+  * regdate : DateTime
+  * update_user_id : Text
+  * lastupdate : DateTime
+
+}
+@enduml

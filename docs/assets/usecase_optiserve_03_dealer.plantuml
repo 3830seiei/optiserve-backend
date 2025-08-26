@@ -1,0 +1,25 @@
+'----------------------------------------------------------
+' ユースケース図
+'    OptiServe
+'    ディーラーアカウントユースケース図
+' 修正の履歴
+'    2025-03-04 H.Miyazawa 新規作成
+'----------------------------------------------------------
+@startuml
+left to right direction
+actor HpUser
+actor Admin
+actor Dealer
+package "システム外" as External {
+Dealer -- (アカウント追加の依頼)
+(アカウント追加の依頼) --> Admin
+Dealer -- (医療機関ユーザーへの権限付与依頼)
+(医療機関ユーザーへの権限付与依頼) --> HpUser
+}
+package "OptiServe" as OptiServe {
+Dealer --> (医療機関の選択)
+note "医療機関から認められた権限に応じて機能が異なる" as n01
+(医療機関の選択) .. n01
+Dealer --> (医療機関向け機能の利用)
+}
+@enduml

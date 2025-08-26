@@ -1,0 +1,32 @@
+@startuml
+'-------------------------------------------
+'Table Name  : medical_equipment_analysis_setting
+'Description : 機器ごとの分析設定（対象フラグ、分類上書きなど）
+'
+'[ChangeLog]
+
+'  v1.0.0 (2025-08-13)
+'  - [h.miyazawa] 機器単位での分析設定を新規作成
+
+'  v1.0.1 (2025-08-22)
+'  - [H.Miyazawa] ユーザーIDをintegerからtextに変更。
+
+'[Note]
+'  - 2025-08-22 : generate_dbdesign_artifacts.pyによる自動生成
+'-------------------------------------------
+hide circle
+
+entity "medical_equipment_analysis_setting" as e01 {
+  * ledger_id : Integer
+
+  --
+  * override_is_included : Boolean
+    override_classification_id : Integer
+  * note : JSON
+  * reg_user_id : Text
+  * regdate : DateTime
+  * update_user_id : Text
+  * lastupdate : DateTime
+
+}
+@enduml

@@ -1,0 +1,27 @@
+@startuml
+'------------------------------------------------
+' Title: OptiServe Download Report
+'        医療機関向けのレポートのダウンロード処理
+' Date: 2025-03-19
+' Author: H.Miyazawa
+' ChangeLog:
+'    2025-03-19: First Edition
+'------------------------------------------------
+hide footbox
+actor hospital as hp
+participant "OptiServe" as os
+participant "OptiServe API" as osapi
+entity "OptiServe DB" as osdb
+participant "opsman" as op
+participant "datahub" as dh
+participant "datarefinery" as dr
+entity "datawarehouse" as dw
+
+hp -> hp: レポート作成の通知を取得
+hp -> os: レポートのダウンロード画面を開く
+os -> os: 対象のファイルを選択しダウンロード要求
+os --> hp: ファイルのダウンロード
+os -> osdb: ダウンロード履歴登録
+osdb -> osdb: ダウンロード履歴登録
+osdb --> os: ダウンロード履歴登録結果応答
+@enduml

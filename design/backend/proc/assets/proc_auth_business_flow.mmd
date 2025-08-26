@@ -1,0 +1,15 @@
+graph TD
+    A[ログインリクエスト受信] --> B[メールアドレスでユーザー検索]
+    B --> C{ユーザー存在？}
+    C -->|No| D[認証失敗レスポンス]
+    C -->|Yes| E[パスワード照合]
+    E --> F{パスワード一致？}
+    F -->|No| D
+    F -->|Yes| G[user_status確認]
+    G --> H{status = 0?}
+    H -->|Yes| I[next_action: show_user_registration]
+    H -->|No| L{status = 9?}
+    L -->|Yes| M[利用停止エラーレスポンス]
+    L -->|No| J[next_action: show_main_menu]
+    I --> K[成功レスポンス]
+    J --> K

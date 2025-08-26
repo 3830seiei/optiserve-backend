@@ -1,0 +1,18 @@
+graph TD
+    A[管理者：連携作成リクエスト] --> B[権限チェック（管理者権限）]
+    B --> C[entity_type=1チェック]
+    C --> D[必須フィールドバリデーション]
+    D --> E[値範囲チェック]
+    E --> F[医療機関マスタ存在チェック]
+    F --> G[メールリスト変換]
+    G --> H[DBトランザクション開始]
+    H --> I[連携データ保存]
+    I --> J[コミット]
+    J --> K[登録完了レスポンス]
+    
+    B -->|権限なし| L[403 Forbidden]
+    C -->|entity_type!=1| M[400 Bad Request]
+    D -->|必須フィールドなし| N[400 Bad Request]
+    E -->|値範囲外| O[400 Bad Request]
+    F -->|医療機関なし| P[400 Bad Request]
+    I -->|DBエラー| Q[ロールバック → 500 Internal Server Error]

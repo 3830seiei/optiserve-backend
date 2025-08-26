@@ -1,0 +1,29 @@
+'----------------------------------------------------------
+' ユースケース図
+'    OptiServe
+'    メーカーアカウントユースケース図
+' 修正の履歴
+'    2025-03-04 H.Miyazawa 新規作成
+'----------------------------------------------------------
+@startuml
+left to right direction
+actor Maker
+actor Admin
+package "システム外(Phase2)" as External {
+Maker -- (アカウント追加の依頼)
+(アカウント追加の依頼) --> Admin
+Maker -- (Tableauアカウント追加の依頼)
+Maker -- (請求書に従い支払い)
+}
+package "OptiServe(Phase2)" as OptiServer {
+Maker -- (基本情報のメンテナンス)
+Maker -- (買掛管理)
+Maker -- (閲覧対象の医療機関の選択)
+(基本情報のメンテナンス) --> (通知先メールアドレスの登録) : <<include>>
+(基本情報のメンテナンス) --> (パスワードの変更) : <<include>>
+(基本情報のメンテナンス) --> (請求関係情報の登録) : <<include>>
+(買掛管理) --> (請求書のダウンロード) : <<include>>
+(買掛管理) --> (領収書のダウンロード) : <<include>>
+}
+External -down-> OptiServe
+@enduml

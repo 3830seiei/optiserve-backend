@@ -1,0 +1,9 @@
+graph TD
+    A[レポート選択情報取得] --> B[user_entity_link取得]
+    B --> C{count_reportout_classification設定あり？}
+    C -->|Yes| D[設定値を最大数とする]
+    C -->|No| E[デフォルト5を最大数とする]
+    D --> F[最大数まで選択情報取得]
+    E --> F
+    F --> G[rank順でソート]
+    G --> H[選択情報レスポンス]

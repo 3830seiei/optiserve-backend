@@ -1,0 +1,46 @@
+@startuml
+'------------------------------------------------
+' Title: OptiServe Get Hospital Data
+'        医療機関情報のアップロードから摘要まで
+' Date: 2025-03-17
+' Author: H.Miyazawa
+' ChangeLog:
+'    2025-03-17: First Edition
+'------------------------------------------------
+hide footbox
+actor Hospital as hp
+participant "OptiServe" as os
+participant "OptiServe API" as osapi
+entity "OptiServe DB" as osdb
+participant "datahub" as dh
+participant "datarefinery" as df
+entity "datawarehouse" as dw
+
+hp -> os: 医療機関情報のファイル準備
+os -> os: アップロード実行
+os -> os: 医療機関情報のファイル保存
+os -> osdb: 保存情報の追加
+osdb -> osdb: データ保存履歴の追加
+loop File Exists (Daily Batch)
+    dh -> osapi: 医療機関情報の提供を要求
+    osapi -> osdb: 医療機関情報の確認
+    osdb -> osdb: 未提供情報の確認
+    osdb --> osapi: 未提供情報有無の返却
+    alt data exists
+        osapi --> dh: 医療機関情報のダウンロード
+        dh -> dh: 当月のループ終了
+    else data not exists
+        osapi --> dh: Data Not Found
+    end
+end
+dh -> dw: RAWデータの保存
+df -> dw: RAWデータの取得要求
+dw --> df: RAWデータの提供
+df -> df: データのクリーニング
+df -> dw: クリーニングデータの保存
+dw -> dw: 機器台帳の作成・更新
+df -> osapi: 機器台帳の提供
+osapi -> osdb: 機器台帳の保存
+osdb -> osdb: 機器台帳の更新
+osdb -> osdb: 機器分類の更新\n(機器台帳の影響ある場合)
+@enduml

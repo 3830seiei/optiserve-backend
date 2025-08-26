@@ -1,0 +1,28 @@
+@startuml
+'------------------------------------------------
+' Title: OptiServe Modify Master Data (maker)
+'        メーカーマスタ情報のメンテナンス
+' Date: 2025-03-17
+' Author: H.Miyazawa
+' ChangeLog:
+'    2025-03-17: First Edition
+'------------------------------------------------
+hide footbox
+actor maker as mk
+participant "OptiServe" as os
+participant "OptiServe API" as osapi
+entity "OptiServe DB" as osdb
+participant "opsman" as op
+participant "datahub" as dh
+participant "datarefinery" as df
+entity "datawarehouse" as dw
+
+== (p2)出力対象の医療機関選択 ==
+mk -> os: 機器分類の出力対象選択を開く
+os -> os: 出力対象の医療機関を選択
+note right os: 選択可能な数量はシステム管理者が設定
+os -> os: 更新決定
+os -> osdb: 出力対象の医療機関情報の更新
+osdb -> osdb: 出力対象の医療機関情報の更新
+
+@enduml

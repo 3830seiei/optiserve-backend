@@ -1,0 +1,13 @@
+graph TD
+    A[医療機関：3ファイル同時アップロード] --> B[権限チェック（医療機関ID）]
+    B --> C[医療機関存在チェック]
+    C --> D[ファイル拡張子バリデーション（.csv）]
+    D --> E[ファイル保存（上書き）]
+    E --> F[DB履歴記録（facility_upload_log）]
+    F --> G[通知メール送信]
+    G --> H[アップロード完了レスポンス]
+    
+    B -->|権限なし| I[403 Forbidden]
+    C -->|医療機関なし| J[400 Bad Request]
+    D -->|拡張子不正| K[400 Bad Request]
+    E -->|保存エラー| L[500 Internal Server Error]

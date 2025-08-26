@@ -1,0 +1,525 @@
+[2025-08-07 09:34:43][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 09:36:50][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 09:37:33][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 09:45:28][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 10:03:17][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 10:03:46][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 10:07:08][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 10:07:14][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 10:07:20][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 10:16:16][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 10:16:59][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 10:17:17][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 10:17:26][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 10:17:34][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 10:29:31][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 10:35:25][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 10:36:17][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 10:41:34][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 10:41:40][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 10:48:06][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 10:53:31][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 10:53:38][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 10:55:04][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 10:55:13][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 10:56:21][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_og07w0
+[2025-08-07 10:56:21][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 6, 'entity_name': 'pytest連携組織_og07w0', 'notification_email_list': 'pytest_xlv83s@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 10:56:21][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 10:56:21][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 10:56:21][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 10:56:21][E][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成エラー: (sqlite3.IntegrityError) UNIQUE constraint failed: user_entity_link.entity_type, user_entity_link.entity_relation_id
+[SQL: INSERT INTO user_entity_link (entity_type, entity_relation_id, entity_name, entity_address_postal_code, entity_address_prefecture, entity_address_city, entity_address_line1, entity_address_line2, entity_phone_number, notification_email_list, count_reportout_classification, analiris_classification_level, regdate, lastupdate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: (1, 6, 'pytest連携組織_og07w0', None, None, None, None, None, None, '"pytest_xlv83s@example.com"', 5, 1, '2025-08-07 10:56:21.645755', '2025-08-07 10:56:21.645757')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2025-08-07 10:56:21][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: テスト組織
+[2025-08-07 10:56:21][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 2, 'entity_relation_id': 6, 'entity_name': 'テスト組織', 'notification_email_list': 'pytest_3ii66j@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 10:56:21][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: テスト組織
+[2025-08-07 10:56:21][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 99999, 'entity_name': 'テスト組織', 'notification_email_list': 'pytest_d0p7em@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 10:56:21][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_s3ggz0
+[2025-08-07 10:56:21][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 6, 'entity_name': 'pytest連携組織_s3ggz0', 'notification_email_list': 'pytest_onazyo@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 2}
+[2025-08-07 10:56:21][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 10:56:21][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 10:56:21][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 10:56:21][E][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成エラー: (sqlite3.IntegrityError) UNIQUE constraint failed: user_entity_link.entity_type, user_entity_link.entity_relation_id
+[SQL: INSERT INTO user_entity_link (entity_type, entity_relation_id, entity_name, entity_address_postal_code, entity_address_prefecture, entity_address_city, entity_address_line1, entity_address_line2, entity_phone_number, notification_email_list, count_reportout_classification, analiris_classification_level, regdate, lastupdate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: (1, 6, 'pytest連携組織_s3ggz0', None, None, None, None, None, None, '"pytest_onazyo@example.com"', 5, 2, '2025-08-07 10:56:21.688587', '2025-08-07 10:56:21.688588')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2025-08-07 10:56:55][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_a63tou
+[2025-08-07 10:56:55][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 6, 'entity_name': 'pytest連携組織_a63tou', 'notification_email_list': 'pytest_v7i4um@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 10:56:55][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 10:56:55][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 10:56:55][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 10:56:55][E][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成エラー: (sqlite3.IntegrityError) UNIQUE constraint failed: user_entity_link.entity_type, user_entity_link.entity_relation_id
+[SQL: INSERT INTO user_entity_link (entity_type, entity_relation_id, entity_name, entity_address_postal_code, entity_address_prefecture, entity_address_city, entity_address_line1, entity_address_line2, entity_phone_number, notification_email_list, count_reportout_classification, analiris_classification_level, regdate, lastupdate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: (1, 6, 'pytest連携組織_a63tou', None, None, None, None, None, None, '"pytest_v7i4um@example.com"', 5, 1, '2025-08-07 10:56:55.474605', '2025-08-07 10:56:55.474606')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2025-08-07 11:03:07][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_wd5ixc
+[2025-08-07 11:03:07][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 6, 'entity_name': 'pytest連携組織_wd5ixc', 'notification_email_list': 'pytest_2k0whq@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 11:03:07][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 11:03:07][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 11:03:07][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 11:03:07][E][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成エラー: (sqlite3.IntegrityError) UNIQUE constraint failed: user_entity_link.entity_type, user_entity_link.entity_relation_id
+[SQL: INSERT INTO user_entity_link (entity_type, entity_relation_id, entity_name, entity_address_postal_code, entity_address_prefecture, entity_address_city, entity_address_line1, entity_address_line2, entity_phone_number, notification_email_list, count_reportout_classification, analiris_classification_level, regdate, lastupdate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: (1, 6, 'pytest連携組織_wd5ixc', None, None, None, None, None, None, '"pytest_2k0whq@example.com"', 5, 1, '2025-08-07 11:03:07.082886', '2025-08-07 11:03:07.082888')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2025-08-07 11:07:19][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 11:33:15][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 11:33:38][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 11:33:45][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 11:33:51][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 11:34:07][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 11:37:49][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 11:38:14][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 11:38:24][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 11:38:31][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 11:38:44][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 11:38:49][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 11:39:38][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 11:41:20][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 11:42:03][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 11:45:26][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 11:45:42][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 11:45:54][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 11:46:02][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 11:54:16][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 11:58:19][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 11:58:40][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 11:58:46][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 11:58:56][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 11:59:06][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 11:59:16][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 12:00:23][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 12:00:42][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_vug9b0
+[2025-08-07 12:00:42][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 6, 'entity_name': 'pytest連携組織_vug9b0', 'notification_email_list': 'pytest_1erpee@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 12:00:42][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 12:00:42][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 12:00:42][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 12:00:42][E][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成エラー: (sqlite3.IntegrityError) UNIQUE constraint failed: user_entity_link.entity_type, user_entity_link.entity_relation_id
+[SQL: INSERT INTO user_entity_link (entity_type, entity_relation_id, entity_name, entity_address_postal_code, entity_address_prefecture, entity_address_city, entity_address_line1, entity_address_line2, entity_phone_number, notification_email_list, count_reportout_classification, analiris_classification_level, regdate, lastupdate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: (1, 6, 'pytest連携組織_vug9b0', None, None, None, None, None, None, '"pytest_1erpee@example.com"', 5, 1, '2025-08-07 12:00:42.709809', '2025-08-07 12:00:42.709811')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2025-08-07 12:00:42][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: テスト組織
+[2025-08-07 12:00:42][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 2, 'entity_relation_id': 6, 'entity_name': 'テスト組織', 'notification_email_list': 'pytest_nlgn3e@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 12:00:42][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: テスト組織
+[2025-08-07 12:00:42][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 99999, 'entity_name': 'テスト組織', 'notification_email_list': 'pytest_l50uyz@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 12:00:42][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_u6f6xm
+[2025-08-07 12:00:42][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 6, 'entity_name': 'pytest連携組織_u6f6xm', 'notification_email_list': 'pytest_28m1mn@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 2}
+[2025-08-07 12:00:42][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 12:00:42][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 12:00:42][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 12:00:42][E][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成エラー: (sqlite3.IntegrityError) UNIQUE constraint failed: user_entity_link.entity_type, user_entity_link.entity_relation_id
+[SQL: INSERT INTO user_entity_link (entity_type, entity_relation_id, entity_name, entity_address_postal_code, entity_address_prefecture, entity_address_city, entity_address_line1, entity_address_line2, entity_phone_number, notification_email_list, count_reportout_classification, analiris_classification_level, regdate, lastupdate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: (1, 6, 'pytest連携組織_u6f6xm', None, None, None, None, None, None, '"pytest_28m1mn@example.com"', 5, 2, '2025-08-07 12:00:42.747875', '2025-08-07 12:00:42.747876')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2025-08-07 12:01:49][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_33pbrf
+[2025-08-07 12:01:49][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 6, 'entity_name': 'pytest連携組織_33pbrf', 'notification_email_list': 'pytest_vicjjl@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 12:01:49][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 12:01:49][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 12:01:49][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 12:01:49][E][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成エラー: (sqlite3.IntegrityError) UNIQUE constraint failed: user_entity_link.entity_type, user_entity_link.entity_relation_id
+[SQL: INSERT INTO user_entity_link (entity_type, entity_relation_id, entity_name, entity_address_postal_code, entity_address_prefecture, entity_address_city, entity_address_line1, entity_address_line2, entity_phone_number, notification_email_list, count_reportout_classification, analiris_classification_level, regdate, lastupdate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: (1, 6, 'pytest連携組織_33pbrf', None, None, None, None, None, None, '"pytest_vicjjl@example.com"', 5, 1, '2025-08-07 12:01:49.422060', '2025-08-07 12:01:49.422061')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2025-08-07 13:20:39][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_cbuwne
+[2025-08-07 13:20:39][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 6, 'entity_name': 'pytest連携組織_cbuwne', 'notification_email_list': 'pytest_wowaol@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 13:20:39][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 13:20:39][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 13:20:39][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 13:20:39][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理完了
+[2025-08-07 13:20:39][E][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成エラー: 'UserEntityLink' object has no attribute 'id'
+[2025-08-07 13:24:26][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 13:25:15][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 13:25:23][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 13:25:32][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 13:25:46][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_xnzxp4
+[2025-08-07 13:25:46][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 6, 'entity_name': 'pytest連携組織_xnzxp4', 'notification_email_list': 'pytest_sipuiw@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 13:25:46][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 13:25:46][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 13:25:46][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 13:25:46][E][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成エラー: (sqlite3.IntegrityError) UNIQUE constraint failed: user_entity_link.entity_type, user_entity_link.entity_relation_id
+[SQL: INSERT INTO user_entity_link (entity_type, entity_relation_id, entity_name, entity_address_postal_code, entity_address_prefecture, entity_address_city, entity_address_line1, entity_address_line2, entity_phone_number, notification_email_list, count_reportout_classification, analiris_classification_level, regdate, lastupdate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: (1, 6, 'pytest連携組織_xnzxp4', None, None, None, None, None, None, '"pytest_sipuiw@example.com"', 5, 1, '2025-08-07 13:25:46.990099', '2025-08-07 13:25:46.990100')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2025-08-07 13:26:28][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 13:27:29][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_0ofydf
+[2025-08-07 13:27:29][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 6, 'entity_name': 'pytest連携組織_0ofydf', 'notification_email_list': 'pytest_o4gh3k@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 13:27:29][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 13:27:29][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 13:27:29][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 13:27:29][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理完了
+[2025-08-07 13:27:29][E][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成エラー: 'UserEntityLink' object has no attribute 'id'
+[2025-08-07 13:31:46][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 13:32:21][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_4a9mdm
+[2025-08-07 13:32:21][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 6, 'entity_name': 'pytest連携組織_4a9mdm', 'notification_email_list': 'pytest_qv1u1i@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 13:32:21][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 13:32:21][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 13:32:21][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 13:32:21][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理完了
+[2025-08-07 13:32:21][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成完了: entity_type=1, entity_relation_id=6
+[2025-08-07 13:32:38][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_jh2tsd
+[2025-08-07 13:32:38][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 6, 'entity_name': 'pytest連携組織_jh2tsd', 'notification_email_list': 'pytest_fcmngg@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 13:32:38][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 13:32:38][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 13:32:38][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 13:32:38][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理完了
+[2025-08-07 13:32:38][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成完了: entity_type=1, entity_relation_id=6
+[2025-08-07 13:32:38][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: テスト組織
+[2025-08-07 13:32:38][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 2, 'entity_relation_id': 6, 'entity_name': 'テスト組織', 'notification_email_list': 'pytest_1hyn55@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 13:32:38][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: テスト組織
+[2025-08-07 13:32:38][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 99999, 'entity_name': 'テスト組織', 'notification_email_list': 'pytest_evxuw3@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 13:32:38][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_spy8xr
+[2025-08-07 13:32:38][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 6, 'entity_name': 'pytest連携組織_spy8xr', 'notification_email_list': 'pytest_u9c9bt@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 2}
+[2025-08-07 13:32:38][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 13:32:38][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 13:32:38][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 13:32:38][E][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成エラー: (sqlite3.IntegrityError) UNIQUE constraint failed: user_entity_link.entity_type, user_entity_link.entity_relation_id
+[SQL: INSERT INTO user_entity_link (entity_type, entity_relation_id, entity_name, entity_address_postal_code, entity_address_prefecture, entity_address_city, entity_address_line1, entity_address_line2, entity_phone_number, notification_email_list, count_reportout_classification, analiris_classification_level, regdate, lastupdate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: (1, 6, 'pytest連携組織_spy8xr', None, None, None, None, None, None, '"pytest_u9c9bt@example.com"', 5, 2, '2025-08-07 13:32:38.048182', '2025-08-07 13:32:38.048183')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2025-08-07 13:35:16][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 13:35:25][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 13:36:38][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 13:37:02][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 13:37:12][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 13:37:23][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 13:54:03][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_76474g
+[2025-08-07 13:54:03][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 6, 'entity_name': 'pytest連携組織_76474g', 'notification_email_list': 'pytest_l0pwbw@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 13:54:03][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 13:54:03][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 13:54:03][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 13:54:03][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理完了
+[2025-08-07 13:54:03][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成完了: entity_type=1, entity_relation_id=6
+[2025-08-07 13:54:03][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: テスト組織
+[2025-08-07 13:54:03][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 2, 'entity_relation_id': 6, 'entity_name': 'テスト組織', 'notification_email_list': 'pytest_enl2l2@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 13:54:03][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: テスト組織
+[2025-08-07 13:54:03][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 99999, 'entity_name': 'テスト組織', 'notification_email_list': 'pytest_c6ircz@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 13:54:03][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_fkjzmk
+[2025-08-07 13:54:03][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 6, 'entity_name': 'pytest連携組織_fkjzmk', 'notification_email_list': 'pytest_qbfivs@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 2}
+[2025-08-07 13:54:03][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 13:54:03][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 13:54:03][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 13:54:03][E][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成エラー: (sqlite3.IntegrityError) UNIQUE constraint failed: user_entity_link.entity_type, user_entity_link.entity_relation_id
+[SQL: INSERT INTO user_entity_link (entity_type, entity_relation_id, entity_name, entity_address_postal_code, entity_address_prefecture, entity_address_city, entity_address_line1, entity_address_line2, entity_phone_number, notification_email_list, count_reportout_classification, analiris_classification_level, regdate, lastupdate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: (1, 6, 'pytest連携組織_fkjzmk', None, None, None, None, None, None, '["pytest_qbfivs@example.com"]', 5, 2, '2025-08-07 13:54:03.156235', '2025-08-07 13:54:03.156236')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2025-08-07 13:55:29][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_2tevaq
+[2025-08-07 13:55:29][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 6, 'entity_name': 'pytest連携組織_2tevaq', 'notification_email_list': 'pytest_9g1s4r@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 13:55:29][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 13:55:29][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 13:55:29][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 13:55:29][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理完了
+[2025-08-07 13:55:29][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成完了: entity_type=1, entity_relation_id=6
+[2025-08-07 13:55:29][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: テスト組織
+[2025-08-07 13:55:29][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 2, 'entity_relation_id': 6, 'entity_name': 'テスト組織', 'notification_email_list': 'pytest_ltrdqv@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 13:55:29][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: テスト組織
+[2025-08-07 13:55:29][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 99999, 'entity_name': 'テスト組織', 'notification_email_list': 'pytest_aj3j5m@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 13:55:29][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_1oxcmn
+[2025-08-07 13:55:29][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 6, 'entity_name': 'pytest連携組織_1oxcmn', 'notification_email_list': 'pytest_arlp3z@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 2}
+[2025-08-07 13:55:29][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 13:55:29][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 13:55:29][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 13:55:29][E][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成エラー: (sqlite3.IntegrityError) UNIQUE constraint failed: user_entity_link.entity_type, user_entity_link.entity_relation_id
+[SQL: INSERT INTO user_entity_link (entity_type, entity_relation_id, entity_name, entity_address_postal_code, entity_address_prefecture, entity_address_city, entity_address_line1, entity_address_line2, entity_phone_number, notification_email_list, count_reportout_classification, analiris_classification_level, regdate, lastupdate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: (1, 6, 'pytest連携組織_1oxcmn', None, None, None, None, None, None, '["pytest_arlp3z@example.com"]', 5, 2, '2025-08-07 13:55:29.814125', '2025-08-07 13:55:29.814126')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2025-08-07 13:57:36][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 14:00:29][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_iyuu77
+[2025-08-07 14:00:29][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 6, 'entity_name': 'pytest連携組織_iyuu77', 'notification_email_list': 'pytest_qlmeny@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 14:00:29][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 14:00:29][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 14:00:29][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 14:00:29][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理完了
+[2025-08-07 14:00:29][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成完了: entity_type=1, entity_relation_id=6
+[2025-08-07 14:00:29][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: テスト組織
+[2025-08-07 14:00:29][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 2, 'entity_relation_id': 6, 'entity_name': 'テスト組織', 'notification_email_list': 'pytest_gz9wgw@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 14:00:29][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: テスト組織
+[2025-08-07 14:00:29][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 99999, 'entity_name': 'テスト組織', 'notification_email_list': 'pytest_8pmq1v@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 14:00:29][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_oforxx
+[2025-08-07 14:00:29][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 6, 'entity_name': 'pytest連携組織_oforxx', 'notification_email_list': 'pytest_277y8y@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 2}
+[2025-08-07 14:00:29][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 14:00:29][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 14:00:29][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 14:00:29][E][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成エラー: (sqlite3.IntegrityError) UNIQUE constraint failed: user_entity_link.entity_type, user_entity_link.entity_relation_id
+[SQL: INSERT INTO user_entity_link (entity_type, entity_relation_id, entity_name, entity_address_postal_code, entity_address_prefecture, entity_address_city, entity_address_line1, entity_address_line2, entity_phone_number, notification_email_list, count_reportout_classification, analiris_classification_level, regdate, lastupdate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: (1, 6, 'pytest連携組織_oforxx', None, None, None, None, None, None, '["pytest_277y8y@example.com"]', 5, 2, '2025-08-07 14:00:29.671738', '2025-08-07 14:00:29.671740')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2025-08-07 14:02:51][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 14:04:43][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 14:04:54][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 14:05:14][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_75aef2
+[2025-08-07 14:05:14][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 6, 'entity_name': 'pytest連携組織_75aef2', 'notification_email_list': 'pytest_tzcibz@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 14:05:14][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 14:05:14][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 14:05:14][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 14:05:14][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理完了
+[2025-08-07 14:05:14][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成完了: entity_type=1, entity_relation_id=6
+[2025-08-07 14:05:14][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: テスト組織
+[2025-08-07 14:05:14][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 2, 'entity_relation_id': 6, 'entity_name': 'テスト組織', 'notification_email_list': 'pytest_u6g2ds@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 14:05:14][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: テスト組織
+[2025-08-07 14:05:14][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 99999, 'entity_name': 'テスト組織', 'notification_email_list': 'pytest_klt05k@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 14:05:14][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_y9skkr
+[2025-08-07 14:05:14][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 6, 'entity_name': 'pytest連携組織_y9skkr', 'notification_email_list': 'pytest_k9ias5@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 2}
+[2025-08-07 14:05:14][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 14:05:14][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 14:05:14][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 14:05:14][E][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成エラー: (sqlite3.IntegrityError) UNIQUE constraint failed: user_entity_link.entity_type, user_entity_link.entity_relation_id
+[SQL: INSERT INTO user_entity_link (entity_type, entity_relation_id, entity_name, entity_address_postal_code, entity_address_prefecture, entity_address_city, entity_address_line1, entity_address_line2, entity_phone_number, notification_email_list, count_reportout_classification, analiris_classification_level, regdate, lastupdate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: (1, 6, 'pytest連携組織_y9skkr', None, None, None, None, None, None, '["pytest_k9ias5@example.com"]', 5, 2, '2025-08-07 14:05:14.864008', '2025-08-07 14:05:14.864009')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2025-08-07 14:05:55][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_fnrwek
+[2025-08-07 14:05:55][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 6, 'entity_name': 'pytest連携組織_fnrwek', 'notification_email_list': 'pytest_3k4mdn@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 2}
+[2025-08-07 14:05:55][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 14:05:55][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 14:05:55][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 14:05:55][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理完了
+[2025-08-07 14:05:55][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成完了: entity_type=1, entity_relation_id=6
+[2025-08-07 14:06:06][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_sw18f1
+[2025-08-07 14:06:06][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 6, 'entity_name': 'pytest連携組織_sw18f1', 'notification_email_list': 'pytest_f3ejjj@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 14:06:06][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 14:06:06][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 14:06:06][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 14:06:06][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理完了
+[2025-08-07 14:06:06][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成完了: entity_type=1, entity_relation_id=6
+[2025-08-07 14:06:06][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: テスト組織
+[2025-08-07 14:06:06][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 2, 'entity_relation_id': 6, 'entity_name': 'テスト組織', 'notification_email_list': 'pytest_6y70kg@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 14:06:06][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: テスト組織
+[2025-08-07 14:06:06][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 99999, 'entity_name': 'テスト組織', 'notification_email_list': 'pytest_rod2my@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 14:06:06][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_wfanfq
+[2025-08-07 14:06:06][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 6, 'entity_name': 'pytest連携組織_wfanfq', 'notification_email_list': 'pytest_hqyrp5@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 2}
+[2025-08-07 14:06:06][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 14:06:06][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 14:06:06][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 14:06:06][E][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成エラー: (sqlite3.IntegrityError) UNIQUE constraint failed: user_entity_link.entity_type, user_entity_link.entity_relation_id
+[SQL: INSERT INTO user_entity_link (entity_type, entity_relation_id, entity_name, entity_address_postal_code, entity_address_prefecture, entity_address_city, entity_address_line1, entity_address_line2, entity_phone_number, notification_email_list, count_reportout_classification, analiris_classification_level, regdate, lastupdate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: (1, 6, 'pytest連携組織_wfanfq', None, None, None, None, None, None, '["pytest_hqyrp5@example.com"]', 5, 2, '2025-08-07 14:06:06.269473', '2025-08-07 14:06:06.269474')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2025-08-07 14:07:45][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_ogbnbo
+[2025-08-07 14:07:45][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 6, 'entity_name': 'pytest連携組織_ogbnbo', 'notification_email_list': 'pytest_ncpocy@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 2}
+[2025-08-07 14:07:45][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 14:07:45][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 14:07:45][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 14:07:45][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理完了
+[2025-08-07 14:07:45][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成完了: entity_type=1, entity_relation_id=6
+[2025-08-07 14:09:34][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 14:11:12][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_na0fif
+[2025-08-07 14:11:12][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 6, 'entity_name': 'pytest連携組織_na0fif', 'notification_email_list': 'pytest_hn6bvf@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 2}
+[2025-08-07 14:11:12][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 14:11:12][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 14:11:12][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 14:11:12][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理完了
+[2025-08-07 14:11:12][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成完了: entity_type=1, entity_relation_id=6
+[2025-08-07 14:11:19][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_0oy6b0
+[2025-08-07 14:11:19][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 6, 'entity_name': 'pytest連携組織_0oy6b0', 'notification_email_list': 'pytest_uwcggy@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 14:11:19][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 14:11:19][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 14:11:19][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 14:11:19][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理完了
+[2025-08-07 14:11:19][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成完了: entity_type=1, entity_relation_id=6
+[2025-08-07 14:11:19][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: テスト組織
+[2025-08-07 14:11:19][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 2, 'entity_relation_id': 6, 'entity_name': 'テスト組織', 'notification_email_list': 'pytest_zmce0q@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 14:11:19][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: テスト組織
+[2025-08-07 14:11:19][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 99999, 'entity_name': 'テスト組織', 'notification_email_list': 'pytest_24y3ra@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 14:11:19][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_2pf6g8
+[2025-08-07 14:11:19][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 6, 'entity_name': 'pytest連携組織_2pf6g8', 'notification_email_list': 'pytest_j3dyvo@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 2}
+[2025-08-07 14:11:19][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 14:11:19][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 14:11:19][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 14:11:19][E][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成エラー: (sqlite3.IntegrityError) UNIQUE constraint failed: user_entity_link.entity_type, user_entity_link.entity_relation_id
+[SQL: INSERT INTO user_entity_link (entity_type, entity_relation_id, entity_name, entity_address_postal_code, entity_address_prefecture, entity_address_city, entity_address_line1, entity_address_line2, entity_phone_number, notification_email_list, count_reportout_classification, analiris_classification_level, regdate, lastupdate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: (1, 6, 'pytest連携組織_2pf6g8', None, None, None, None, None, None, '["pytest_j3dyvo@example.com"]', 5, 2, '2025-08-07 14:11:19.107430', '2025-08-07 14:11:19.107431')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2025-08-07 14:11:19][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_5lo0ad
+[2025-08-07 14:11:19][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 6, 'entity_name': 'pytest連携組織_5lo0ad', 'notification_email_list': 'pytest_pz9d9i@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 2}
+[2025-08-07 14:11:19][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 14:11:19][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 14:11:19][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 14:11:19][E][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成エラー: (sqlite3.IntegrityError) UNIQUE constraint failed: user_entity_link.entity_type, user_entity_link.entity_relation_id
+[SQL: INSERT INTO user_entity_link (entity_type, entity_relation_id, entity_name, entity_address_postal_code, entity_address_prefecture, entity_address_city, entity_address_line1, entity_address_line2, entity_phone_number, notification_email_list, count_reportout_classification, analiris_classification_level, regdate, lastupdate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: (1, 6, 'pytest連携組織_5lo0ad', None, None, None, None, None, None, '["pytest_pz9d9i@example.com"]', 5, 2, '2025-08-07 14:11:19.146568', '2025-08-07 14:11:19.146570')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2025-08-07 14:11:19][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_qddhi7
+[2025-08-07 14:11:19][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 6, 'entity_name': 'pytest連携組織_qddhi7', 'notification_email_list': 'pytest_wq133k@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 2}
+[2025-08-07 14:11:19][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 14:11:19][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 14:11:19][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 14:11:19][E][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成エラー: (sqlite3.IntegrityError) UNIQUE constraint failed: user_entity_link.entity_type, user_entity_link.entity_relation_id
+[SQL: INSERT INTO user_entity_link (entity_type, entity_relation_id, entity_name, entity_address_postal_code, entity_address_prefecture, entity_address_city, entity_address_line1, entity_address_line2, entity_phone_number, notification_email_list, count_reportout_classification, analiris_classification_level, regdate, lastupdate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: (1, 6, 'pytest連携組織_qddhi7', None, None, None, None, None, None, '["pytest_wq133k@example.com"]', 5, 2, '2025-08-07 14:11:19.154167', '2025-08-07 14:11:19.154169')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+[2025-08-07 14:11:46][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: テスト組織
+[2025-08-07 14:11:46][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 7, 'entity_name': 'テスト組織', 'notification_email_list': 'test@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 14:11:46][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 14:11:46][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 14:11:46][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 14:11:46][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理完了
+[2025-08-07 14:11:46][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成完了: entity_type=1, entity_relation_id=7
+[2025-08-07 14:12:08][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 14:12:38][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 14:12:44][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_kx8fse
+[2025-08-07 14:12:44][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 6, 'entity_name': 'pytest連携組織_kx8fse', 'notification_email_list': 'pytest_jx0kpl@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 2}
+[2025-08-07 14:12:44][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 14:12:44][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 14:12:44][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 14:12:44][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理完了
+[2025-08-07 14:12:44][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成完了: entity_type=1, entity_relation_id=6
+[2025-08-07 14:12:51][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_ckhvax
+[2025-08-07 14:12:51][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 6, 'entity_name': 'pytest連携組織_ckhvax', 'notification_email_list': 'pytest_00u54t@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 14:12:51][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 14:12:51][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 14:12:51][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 14:12:51][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理完了
+[2025-08-07 14:12:51][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成完了: entity_type=1, entity_relation_id=6
+[2025-08-07 14:12:51][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: テスト組織
+[2025-08-07 14:12:51][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 2, 'entity_relation_id': 6, 'entity_name': 'テスト組織', 'notification_email_list': 'pytest_pogemh@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 14:12:51][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: テスト組織
+[2025-08-07 14:12:51][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 99999, 'entity_name': 'テスト組織', 'notification_email_list': 'pytest_t2j4ml@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 14:12:51][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_r1gqpa
+[2025-08-07 14:12:51][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 8, 'entity_name': 'pytest連携組織_r1gqpa', 'notification_email_list': 'pytest_4tteyl@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 2}
+[2025-08-07 14:12:51][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 14:12:51][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 14:12:51][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 14:12:51][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理完了
+[2025-08-07 14:12:51][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成完了: entity_type=1, entity_relation_id=8
+[2025-08-07 14:12:51][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_t5reve
+[2025-08-07 14:12:51][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 9, 'entity_name': 'pytest連携組織_t5reve', 'notification_email_list': 'pytest_ww0lkt@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 2}
+[2025-08-07 14:12:51][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 14:12:51][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 14:12:51][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 14:12:51][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理完了
+[2025-08-07 14:12:51][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成完了: entity_type=1, entity_relation_id=9
+[2025-08-07 14:12:51][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_qmkzvd
+[2025-08-07 14:12:51][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 11, 'entity_name': 'pytest連携組織_qmkzvd', 'notification_email_list': 'pytest_dhetim@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 2}
+[2025-08-07 14:12:51][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 14:12:51][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 14:12:51][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 14:12:51][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理完了
+[2025-08-07 14:12:51][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成完了: entity_type=1, entity_relation_id=11
+[2025-08-07 14:13:06][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 14:13:13][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_a6cpbm
+[2025-08-07 14:13:13][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 6, 'entity_name': 'pytest連携組織_a6cpbm', 'notification_email_list': 'pytest_lo16gm@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 2}
+[2025-08-07 14:13:13][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 14:13:13][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 14:13:13][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 14:13:13][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理完了
+[2025-08-07 14:13:13][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成完了: entity_type=1, entity_relation_id=6
+[2025-08-07 14:13:19][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_phrcv3
+[2025-08-07 14:13:19][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 6, 'entity_name': 'pytest連携組織_phrcv3', 'notification_email_list': 'pytest_61xl9p@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 14:13:19][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 14:13:19][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 14:13:19][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 14:13:19][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理完了
+[2025-08-07 14:13:19][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成完了: entity_type=1, entity_relation_id=6
+[2025-08-07 14:13:19][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: テスト組織
+[2025-08-07 14:13:19][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 2, 'entity_relation_id': 6, 'entity_name': 'テスト組織', 'notification_email_list': 'pytest_g8hyp7@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 14:13:19][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: テスト組織
+[2025-08-07 14:13:19][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 99999, 'entity_name': 'テスト組織', 'notification_email_list': 'pytest_hrplxx@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 14:13:19][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_wrr08q
+[2025-08-07 14:13:19][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 12, 'entity_name': 'pytest連携組織_wrr08q', 'notification_email_list': 'pytest_z9q2ky@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 2}
+[2025-08-07 14:13:19][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 14:13:19][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 14:13:19][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 14:13:19][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理完了
+[2025-08-07 14:13:19][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成完了: entity_type=1, entity_relation_id=12
+[2025-08-07 14:13:19][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_o87o0h
+[2025-08-07 14:13:19][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 13, 'entity_name': 'pytest連携組織_o87o0h', 'notification_email_list': 'pytest_47qche@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 2}
+[2025-08-07 14:13:19][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 14:13:19][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 14:13:19][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 14:13:19][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理完了
+[2025-08-07 14:13:19][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成完了: entity_type=1, entity_relation_id=13
+[2025-08-07 14:13:19][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_dil4z1
+[2025-08-07 14:13:19][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 14, 'entity_name': 'pytest連携組織_dil4z1', 'notification_email_list': 'pytest_vn1jww@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 2}
+[2025-08-07 14:13:19][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 14:13:19][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 14:13:19][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 14:13:19][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理完了
+[2025-08-07 14:13:19][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成完了: entity_type=1, entity_relation_id=14
+[2025-08-07 14:13:44][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_fs2bi8
+[2025-08-07 14:13:44][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 6, 'entity_name': 'pytest連携組織_fs2bi8', 'notification_email_list': 'pytest_ftg80t@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 14:13:44][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 14:13:44][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 14:13:44][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 14:13:44][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理完了
+[2025-08-07 14:13:44][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成完了: entity_type=1, entity_relation_id=6
+[2025-08-07 14:13:44][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: テスト組織
+[2025-08-07 14:13:44][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 2, 'entity_relation_id': 6, 'entity_name': 'テスト組織', 'notification_email_list': 'pytest_o0b1bj@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 14:13:44][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: テスト組織
+[2025-08-07 14:13:44][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 99999, 'entity_name': 'テスト組織', 'notification_email_list': 'pytest_asqwn7@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 14:13:44][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_c42q45
+[2025-08-07 14:13:44][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 16, 'entity_name': 'pytest連携組織_c42q45', 'notification_email_list': 'pytest_rlbpvp@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 2}
+[2025-08-07 14:13:44][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 14:13:44][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 14:13:44][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 14:13:44][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理完了
+[2025-08-07 14:13:44][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成完了: entity_type=1, entity_relation_id=16
+[2025-08-07 14:13:44][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_iid0xx
+[2025-08-07 14:13:44][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 17, 'entity_name': 'pytest連携組織_iid0xx', 'notification_email_list': 'pytest_qlsjk1@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 2}
+[2025-08-07 14:13:44][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 14:13:44][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 14:13:44][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 14:13:44][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理完了
+[2025-08-07 14:13:44][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成完了: entity_type=1, entity_relation_id=17
+[2025-08-07 14:13:44][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_r4h1wg
+[2025-08-07 14:13:44][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 18, 'entity_name': 'pytest連携組織_r4h1wg', 'notification_email_list': 'pytest_fmo3a8@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 2}
+[2025-08-07 14:13:44][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 14:13:44][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 14:13:44][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 14:13:44][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理完了
+[2025-08-07 14:13:44][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成完了: entity_type=1, entity_relation_id=18
+[2025-08-07 14:13:54][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_a2y8cw
+[2025-08-07 14:13:54][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 6, 'entity_name': 'pytest連携組織_a2y8cw', 'notification_email_list': 'pytest_ja7kgc@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 14:13:54][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 14:13:54][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 14:13:54][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 14:13:54][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理完了
+[2025-08-07 14:13:54][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成完了: entity_type=1, entity_relation_id=6
+[2025-08-07 14:13:54][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: テスト組織
+[2025-08-07 14:13:54][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 2, 'entity_relation_id': 6, 'entity_name': 'テスト組織', 'notification_email_list': 'pytest_ovq2d2@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 14:13:54][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: テスト組織
+[2025-08-07 14:13:54][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 99999, 'entity_name': 'テスト組織', 'notification_email_list': 'pytest_v33t6e@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 1}
+[2025-08-07 14:13:54][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_vcawxi
+[2025-08-07 14:13:54][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 19, 'entity_name': 'pytest連携組織_vcawxi', 'notification_email_list': 'pytest_42rdxc@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 2}
+[2025-08-07 14:13:54][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 14:13:54][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 14:13:54][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 14:13:54][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理完了
+[2025-08-07 14:13:54][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成完了: entity_type=1, entity_relation_id=19
+[2025-08-07 14:13:54][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_biqov4
+[2025-08-07 14:13:54][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 20, 'entity_name': 'pytest連携組織_biqov4', 'notification_email_list': 'pytest_qst8jy@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 2}
+[2025-08-07 14:13:54][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 14:13:54][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 14:13:54][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 14:13:54][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理完了
+[2025-08-07 14:13:54][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成完了: entity_type=1, entity_relation_id=20
+[2025-08-07 14:13:54][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成開始: pytest連携組織_24yzfw
+[2025-08-07 14:13:54][D][src.routers.user_entity_links.create_user_entity_link] リクエストデータ: {'entity_type': 1, 'entity_relation_id': 21, 'entity_name': 'pytest連携組織_24yzfw', 'notification_email_list': 'pytest_nprlwx@example.com', 'count_reportout_classification': 5, 'analiris_classification_level': 2}
+[2025-08-07 14:13:54][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成開始
+[2025-08-07 14:13:54][D][src.routers.user_entity_links.create_user_entity_link] DBオブジェクト作成完了
+[2025-08-07 14:13:54][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理開始
+[2025-08-07 14:13:54][D][src.routers.user_entity_links.create_user_entity_link] DB保存処理完了
+[2025-08-07 14:13:54][I][src.routers.user_entity_links.create_user_entity_link] ユーザー組織連携作成完了: entity_type=1, entity_relation_id=21
+[2025-08-07 17:17:04][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 17:19:10][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 17:19:14][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 17:19:18][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 17:19:27][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 17:19:31][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 17:19:46][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 17:19:55][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 17:34:10][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 17:49:01][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 17:49:13][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 17:49:32][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 17:50:02][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 17:51:11][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 17:51:18][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 17:51:49][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 17:51:56][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 17:52:08][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 17:52:19][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 17:52:30][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 17:53:35][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 18:01:02][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 18:01:11][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 18:01:30][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-07 18:03:49][I][src.main.<module>] OptiServe APIサーバー起動

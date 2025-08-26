@@ -1,0 +1,68 @@
+[2025-08-06 17:00:44][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-06 17:01:00][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-06 17:05:08][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-06 17:05:32][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-06 17:06:12][I][src.routers.facilities.create_facility] 医療機関作成開始: pytest病院_4uv4mj
+[2025-08-06 17:06:17][E][src.routers.facilities.create_facility] 医療機関作成エラー: (sqlite3.OperationalError) database is locked
+[SQL: INSERT INTO mst_medical_facility (medical_name, address_postal_code, address_prefecture, address_city, address_line1, address_line2, phone_number, regdate, lastupdate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('pytest病院_4uv4mj', '530-0001', '大阪府', '大阪市北区', 'テスト区2-2-2', None, '05-4480-8099', '2025-08-06 17:06:12.246266', '2025-08-06 17:06:12.246267')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2025-08-06 17:08:51][I][src.routers.facilities.create_facility] 医療機関作成開始: pytest病院_vbd4zg
+[2025-08-06 17:08:56][E][src.routers.facilities.create_facility] 医療機関作成エラー: (sqlite3.OperationalError) database is locked
+[SQL: INSERT INTO mst_medical_facility (medical_name, address_postal_code, address_prefecture, address_city, address_line1, address_line2, phone_number, regdate, lastupdate) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('pytest病院_vbd4zg', '530-0001', '大阪府', '大阪市北区', 'テスト区2-2-2', None, '01-1905-7941', '2025-08-06 17:08:51.623203', '2025-08-06 17:08:51.623203')]
+(Background on this error at: https://sqlalche.me/e/20/e3q8)
+[2025-08-06 17:09:24][I][src.routers.facilities.create_facility] 医療機関作成開始: pytest病院_25moae
+[2025-08-06 17:09:24][I][src.routers.facilities.create_facility] 医療機関作成完了: ID=11
+[2025-08-06 17:11:46][I][src.routers.facilities.create_facility] 医療機関作成開始: pytest病院_52adaa
+[2025-08-06 17:11:46][I][src.routers.facilities.create_facility] 医療機関作成完了: ID=12
+[2025-08-06 17:11:46][I][src.routers.facilities.create_facility] 医療機関作成開始: pytest病院_i4q5ev
+[2025-08-06 17:11:46][I][src.routers.facilities.create_facility] 医療機関作成完了: ID=13
+[2025-08-06 17:11:46][I][src.routers.facilities.create_facility] 医療機関作成開始: pytest病院_foxixv
+[2025-08-06 17:11:46][I][src.routers.facilities.create_facility] 医療機関作成完了: ID=14
+[2025-08-06 17:11:46][I][src.routers.facilities.create_facility] 医療機関作成開始: 
+[2025-08-06 17:11:46][I][src.routers.facilities.create_facility] 医療機関作成完了: ID=15
+[2025-08-06 17:14:17][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-06 17:14:26][I][src.main.<module>] OptiServe APIサーバー起動
+[2025-08-06 17:14:37][I][src.routers.facilities.create_facility] 医療機関作成開始: pytest病院_niphv3
+[2025-08-06 17:14:37][D][src.routers.facilities.create_facility] リクエストデータ: {'medical_name': 'pytest病院_niphv3', 'address_postal_code': '530-0001', 'address_prefecture': '大阪府', 'address_city': '大阪市北区', 'address_line1': 'テスト区2-2-2', 'address_line2': None, 'phone_number': '03-1840-7559'}
+[2025-08-06 17:14:37][D][src.routers.facilities.create_facility] DBオブジェクト作成開始
+[2025-08-06 17:14:37][D][src.routers.facilities.create_facility] DBオブジェクト作成完了
+[2025-08-06 17:14:37][D][src.routers.facilities.create_facility] DB保存処理開始
+[2025-08-06 17:14:37][D][src.routers.facilities.create_facility] DB保存処理完了
+[2025-08-06 17:14:37][I][src.routers.facilities.create_facility] 医療機関作成完了: ID=16
+[2025-08-06 17:14:37][I][src.routers.facilities.create_facility] 医療機関作成開始: pytest病院_wp6vnl
+[2025-08-06 17:14:37][D][src.routers.facilities.create_facility] リクエストデータ: {'medical_name': 'pytest病院_wp6vnl', 'address_postal_code': None, 'address_prefecture': None, 'address_city': None, 'address_line1': None, 'address_line2': None, 'phone_number': None}
+[2025-08-06 17:14:37][D][src.routers.facilities.create_facility] DBオブジェクト作成開始
+[2025-08-06 17:14:37][D][src.routers.facilities.create_facility] DBオブジェクト作成完了
+[2025-08-06 17:14:37][D][src.routers.facilities.create_facility] DB保存処理開始
+[2025-08-06 17:14:37][D][src.routers.facilities.create_facility] DB保存処理完了
+[2025-08-06 17:14:37][I][src.routers.facilities.create_facility] 医療機関作成完了: ID=17
+[2025-08-06 17:14:37][I][src.routers.facilities.create_facility] 医療機関作成開始: pytest病院_t7jfxy
+[2025-08-06 17:14:37][D][src.routers.facilities.create_facility] リクエストデータ: {'medical_name': 'pytest病院_t7jfxy', 'address_postal_code': '100-0001', 'address_prefecture': '東京都', 'address_city': '千代田区', 'address_line1': 'テスト町1-1-1', 'address_line2': None, 'phone_number': '07-3169-3111'}
+[2025-08-06 17:14:37][D][src.routers.facilities.create_facility] DBオブジェクト作成開始
+[2025-08-06 17:14:37][D][src.routers.facilities.create_facility] DBオブジェクト作成完了
+[2025-08-06 17:14:37][D][src.routers.facilities.create_facility] DB保存処理開始
+[2025-08-06 17:14:37][D][src.routers.facilities.create_facility] DB保存処理完了
+[2025-08-06 17:14:37][I][src.routers.facilities.create_facility] 医療機関作成完了: ID=18
+[2025-08-06 17:28:05][I][src.routers.facilities.create_facility] 医療機関作成開始: pytest病院_gshqds
+[2025-08-06 17:28:05][D][src.routers.facilities.create_facility] リクエストデータ: {'medical_name': 'pytest病院_gshqds', 'address_postal_code': '530-0001', 'address_prefecture': '大阪府', 'address_city': '大阪市北区', 'address_line1': 'テスト区2-2-2', 'address_line2': None, 'phone_number': '05-3607-4980'}
+[2025-08-06 17:28:05][D][src.routers.facilities.create_facility] DBオブジェクト作成開始
+[2025-08-06 17:28:05][D][src.routers.facilities.create_facility] DBオブジェクト作成完了
+[2025-08-06 17:28:05][D][src.routers.facilities.create_facility] DB保存処理開始
+[2025-08-06 17:28:05][D][src.routers.facilities.create_facility] DB保存処理完了
+[2025-08-06 17:28:05][I][src.routers.facilities.create_facility] 医療機関作成完了: ID=19
+[2025-08-06 17:28:05][I][src.routers.facilities.create_facility] 医療機関作成開始: pytest病院_8a0r0u
+[2025-08-06 17:28:05][D][src.routers.facilities.create_facility] リクエストデータ: {'medical_name': 'pytest病院_8a0r0u', 'address_postal_code': None, 'address_prefecture': None, 'address_city': None, 'address_line1': None, 'address_line2': None, 'phone_number': None}
+[2025-08-06 17:28:05][D][src.routers.facilities.create_facility] DBオブジェクト作成開始
+[2025-08-06 17:28:05][D][src.routers.facilities.create_facility] DBオブジェクト作成完了
+[2025-08-06 17:28:05][D][src.routers.facilities.create_facility] DB保存処理開始
+[2025-08-06 17:28:05][D][src.routers.facilities.create_facility] DB保存処理完了
+[2025-08-06 17:28:05][I][src.routers.facilities.create_facility] 医療機関作成完了: ID=20
+[2025-08-06 17:28:05][I][src.routers.facilities.create_facility] 医療機関作成開始: pytest病院_a0v7i5
+[2025-08-06 17:28:05][D][src.routers.facilities.create_facility] リクエストデータ: {'medical_name': 'pytest病院_a0v7i5', 'address_postal_code': '100-0001', 'address_prefecture': '東京都', 'address_city': '千代田区', 'address_line1': 'テスト町1-1-1', 'address_line2': None, 'phone_number': '01-4961-1592'}
+[2025-08-06 17:28:05][D][src.routers.facilities.create_facility] DBオブジェクト作成開始
+[2025-08-06 17:28:05][D][src.routers.facilities.create_facility] DBオブジェクト作成完了
+[2025-08-06 17:28:05][D][src.routers.facilities.create_facility] DB保存処理開始
+[2025-08-06 17:28:05][D][src.routers.facilities.create_facility] DB保存処理完了
+[2025-08-06 17:28:05][I][src.routers.facilities.create_facility] 医療機関作成完了: ID=21

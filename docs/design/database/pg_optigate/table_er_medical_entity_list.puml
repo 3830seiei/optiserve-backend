@@ -1,0 +1,38 @@
+@startuml
+'-------------------------------------------
+'Table Name  : medical_entity_list
+'Description : 医療機関別の医療機器台帳
+'
+'[ChangeLog]
+
+'  v1.0.0 (2025-06-27)
+'  - [H.Miyazawa] OptiServe用のデータベース設計
+
+'  v1.1.0 (2025-07-10)
+'  - [H.Miyazawa] 1.PK情報を変更（equipment_idのみに変更）。2.インデックス情報と外部キー情報を追加
+
+'[Note]
+'  - 2025-07-16 : generate_dbdesign_artifacts.pyによる自動生成
+'-------------------------------------------
+hide circle
+
+entity "medical_entity_list" as e01 {
+  * equipment_id : Integer
+
+  --
+  * medical_id : Integer
+  * facility_equipment_number : Text
+  * classification_id_level1 : Integer
+    classification_id_level2 : Integer
+    classification_id_level3 : Integer
+    jahid_product_id : Integer
+    medie_product_id : Integer
+  * product_name : Text
+    product_maker_name : Text
+    date_purchase : Date
+    date_disposal : Date
+  * regdate : DateTime
+  * lastupdate : DateTime
+
+}
+@enduml

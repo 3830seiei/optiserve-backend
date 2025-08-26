@@ -1,0 +1,157 @@
+@startuml
+hide circle
+entity "ユーザーマスタ" as muser {
+  + UserId [PK]
+  --
+  + UserName
+  + AccountType : 医療機関/ディーラー/メーカー
+  + Password
+  + Email
+  + Tel
+  + Mobile
+  + HpCode [FK] : AccountTypeが医療機関の場合のみ
+  + dealercode [FK] : AccountTypeがディーラーの場合のみ
+  + makercode [FK] : AccountTypeがメーカーの場合のみ
+  + IsActive
+}
+
+entity "医療機関補足情報" as mhpinfo {
+  + hpcode [PK]
+  --
+  + HpName : 表示用医療機関名
+  + HpAddress
+  + HpTel
+  + Hpmobile
+  + NotificationEmail : 通知用メールアドレス(JSON形式で複数登録可能)
+  + rankcount : 機器分類出力ランク数
+}
+
+entity "ディーラー補足情報" as mdealerinfo {
+  + dealercode [PK]
+  --
+  + DealerName : 表示用ディーラー名
+  + DealerAddress
+  + DealerTel
+  + Dealermobile
+}
+
+entity "メーカー補足情報" as mmakerinfo {
+  + makercode [PK]
+  --
+  + MakerName : 表示用メーカー名
+  + MakerAddress
+  + MakerTel
+  + Makermobile
+  + NotificationEmail : 通知用メールアドレス(JSON形式で複数登録可能)
+  + rankcount : 医療機関出力ランク数
+}
+
+entity "医療機関マスタ（外部から提供）" as mhp {
+  + hpcode [PK]
+  --
+  + HpName
+  + HpAddress
+  + HpTel
+}
+
+entity "ディーラーマスタ（外部から提供）" as mdealer {
+  + dealercode [PK]
+  --
+  + DealerName
+  + DealerAddress
+  + DealerTel
+}
+
+entity "メーカーマスタ（外部から提供）" as mmaker {
+  + makercode [PK]
+  --
+  + MakerName
+  + MakerAddress
+  + MakerTel
+}
+
+'muser }|--|| mhp
+'muser }|--|| mhpinfo
+
+entity "ディーラー権限マスタ" as mdealer {
+  + DealerId [PK]
+  --
+  + HpCode [FK] : 連携する医療機関のコード
+  + UserId [FK] : ディーラーユーザーのID
+  + Role : ダウンロードサイト閲覧/マスタ情報の設定/全機能利用/無し
+}
+
+entity "データ保存履歴" as mhistory {
+  + HistoryId [PK]
+  --
+  + HpCode [FK]
+  + FileType : 機器台帳/貸出実績/故障実績
+  + FileName
+  + FilePath
+  + UploadDateTime
+  + UploadUserId [FK] : アップロード処理を行なったユーザー
+  + DownloadDateTime : システムがダウンロードした日時
+}
+
+entity "レポート公開履歴" as mreport {
+  + ReportId [PK]
+  --
+  + HpCode [FK]
+  + Ym : 公開年月
+  + ReportName
+  + ReportPath
+  + UploadDateTime
+  + DownloadDateTime
+  + DownloadUserId [FK] : ダウンロードしたユーザー
+}
+
+entity "機器台帳情報(外部から提供)" as mdevice {
+  + hpcode [PK]
+  + hpseq [PK]
+  --
+  + menumber : 機器番号
+  + grpmanage : 管理部門
+  + grpuser : 利用部門
+  + grppurchase : 購入部門
+  + serialnumber : シリアル番号
+  + datepurchase : 購入日
+  + datestock : 納入日
+  + assetnumber : 資産番号
+  + productname : 製品名
+  + modelnumber : 型番
+  + makername : メーカー名
+  + jancode : JANコード
+  + jmdncode : JMDNコード
+  + bunruicode : 機器分類コード
+  + expirationdate : 機器使用期限
+}
+
+entity "機器分類マスタ(外部から提供)" as mbunrui {
+  + BunruiCode [PK]
+  --
+  + BunruiName
+}
+
+entity "出力対象機器台帳情報" as moutput {
+  + OutputId [PK]
+  --
+  + hpcode [FK]
+  + hpseq [FK]
+  + isOutpug : 集計対象
+}
+
+entity "機器分類ランク数" as mrank {
+  + hpcode [PK]
+  + rank [PK] : ランク(1-その病院のランク数)
+  --
+  + bunruicode : 機器分類コード
+}
+
+entity "医療機関ランク数" as mrank {
+  + makercode [PK]
+  + rank [PK] : ランク(1-そのメーカーのランク数)
+  --
+  + hpcode : 医療機関コード
+}
+
+@enduml
