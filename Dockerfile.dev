@@ -1,29 +1,42 @@
-# --- Dockerfile.dev: development (optional) ---
-# This image expects you to bind-mount code via docker compose for hot reload.
-# smds_core and backend are installed in editable mode inside the container.
-# Example compose service:
-#   services:
-#     api:
-#       build:
-#         context: .
-#         dockerfile: optiserve-backend/Dockerfile.dev
-#       volumes:
-#         - ./optiserve-backend:/app
-#         - ./smds_core:/smds_core
-#       ports: ["8000:8000"]
-
+# Dev image that also bakes test assets (reports/uploads/db) into /data
 FROM python:3.12.11-slim
 
-ENV PIP_NO_CACHE_DIR=1 PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 \    LANG=ja_JP.UTF-8 TZ=Asia/Tokyo
+ENV PIP_NO_CACHE_DIR=1 PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 \
+    LANG=ja_JP.UTF-8 TZ=Asia/Tokyo
 
 WORKDIR /app
 
-# Minimal build tools if your deps include native modules
-RUN apt-get update && apt-get install -y --no-install-recommends \    build-essential \    && rm -rf /var/lib/apt/lists/*
+# Minimal build tools (only if native deps appear in requirements.txt)
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    && rm -rf /var/lib/apt/lists/*
 
-# Pre-install deps to speed up inner loop
+# Backend deps first for cache efficiency
 COPY optiserve-backend/requirements.txt /tmp/requirements.txt
-RUN python -m pip install --upgrade pip \ && pip install -r /tmp/requirements.txt
+RUN python -m pip install --upgrade pip \
+    && pip install -r /tmp/requirements.txt
 
-# smds_core and backend will be mounted; install in editable mode at runtime
-CMD bash -lc "pip install -e /smds_core && pip install -e /app && uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload"
+# -----------------------------
+# Bake test assets into image
+# -----------------------------
+ENV REPORTS_DIR=/data/reports \
+    UPLOADS_DIR=/data/uploads \
+    DATABASE_URL=sqlite:////data/poc_optigate.db
+
+RUN mkdir -p "${REPORTS_DIR}" "${UPLOADS_DIR}" /data
+
+# Copy folders and DB used by pytest (present under optiserve-backend/)
+COPY optiserve-backend/files/reports/ "${REPORTS_DIR}/"
+COPY optiserve-backend/files/uploads/ "${UPLOADS_DIR}/"
+
+# If the DB file does not exist, this COPY will fail. Keep the file in repo for deterministic tests.
+COPY optiserve-backend/poc_optigate.db /data/poc_optigate.db
+
+# Copy backend sources so container can run even without bind mounts
+COPY optiserve-backend/ /app/
+
+# Entrypoint
+COPY optiserve-backend/docker/entrypoint.dev.sh /docker/entrypoint.dev.sh
+RUN chmod +x /docker/entrypoint.dev.sh && sed -i 's/\r$//' /docker/entrypoint.dev.sh
+CMD ["/docker/entrypoint.dev.sh"]
+

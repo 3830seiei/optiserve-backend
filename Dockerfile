@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -y \
     locale-gen ja_JP.UTF-8 && \
     pip install --upgrade pip && \
     pip install -r requirements.txt && \
+    pip install -e smds_core && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # ソースコードをコンテナにコピー
