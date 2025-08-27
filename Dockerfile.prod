@@ -1,0 +1,54 @@
+# --- Dockerfile.prod: multi-stage, smds_core as wheel (recommended) ---
+# Build both backend and smds_core from a mono-repo layout:
+#   .
+#   ├─ smds_core/
+#   └─ optiserve-backend/
+# Build command (note the build context '.'):
+#   docker build -f optiserve-backend/Dockerfile.prod -t optiserve-backend:prod .
+#   docker run --rm -p 8000:8000 optiserve-backend:prod
+
+############################
+# Stage 1: builder (make wheel)
+############################
+FROM python:3.12.11-slim AS builder
+
+ENV PIP_NO_CACHE_DIR=1 PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1
+WORKDIR /build
+
+# System deps for building wheels (add more if you have native deps)
+RUN apt-get update && apt-get install -y --no-install-recommends \    build-essential \    && rm -rf /var/lib/apt/lists/*
+
+# Copy smds_core source from the mono-repo build context (root '.')
+COPY smds_core/ /build/smds_core/
+
+# Build wheel
+RUN python -m pip install --upgrade pip setuptools wheel build \ && python -m build --wheel /build/smds_core \ && ls -l /build/smds_core/dist
+
+############################
+# Stage 2: runtime
+############################
+FROM python:3.12.11-slim
+
+ENV PIP_NO_CACHE_DIR=1 PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 \    LANG=ja_JP.UTF-8 TZ=Asia/Tokyo
+
+WORKDIR /app
+
+# (Optional) OS packages you actually need at runtime
+# RUN apt-get update && apt-get install -y --no-install-recommends \
+#     locales \
+#  && rm -rf /var/lib/apt/lists/* \
+#  && localedef -f UTF-8 -i ja_JP ja_JP.UTF-8 || true
+
+# Install backend deps first (better layer cache)
+COPY optiserve-backend/requirements.txt /app/requirements.txt
+RUN python -m pip install --upgrade pip \ && pip install -r /app/requirements.txt
+
+# Install smds_core wheel built in the builder stage
+COPY --from=builder /build/smds_core/dist/*.whl /tmp/
+RUN pip install /tmp/*.whl && rm -f /tmp/*.whl
+
+# Copy backend sources
+COPY optiserve-backend/ /app/
+
+EXPOSE 8000
+CMD ["uvicorn", "src.main:app", "--host", "0.0.0.0", "--port", "8000"]

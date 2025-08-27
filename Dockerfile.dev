@@ -1,0 +1,29 @@
+# --- Dockerfile.dev: development (optional) ---
+# This image expects you to bind-mount code via docker compose for hot reload.
+# smds_core and backend are installed in editable mode inside the container.
+# Example compose service:
+#   services:
+#     api:
+#       build:
+#         context: .
+#         dockerfile: optiserve-backend/Dockerfile.dev
+#       volumes:
+#         - ./optiserve-backend:/app
+#         - ./smds_core:/smds_core
+#       ports: ["8000:8000"]
+
+FROM python:3.12.11-slim
+
+ENV PIP_NO_CACHE_DIR=1 PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 \    LANG=ja_JP.UTF-8 TZ=Asia/Tokyo
+
+WORKDIR /app
+
+# Minimal build tools if your deps include native modules
+RUN apt-get update && apt-get install -y --no-install-recommends \    build-essential \    && rm -rf /var/lib/apt/lists/*
+
+# Pre-install deps to speed up inner loop
+COPY optiserve-backend/requirements.txt /tmp/requirements.txt
+RUN python -m pip install --upgrade pip \ && pip install -r /tmp/requirements.txt
+
+# smds_core and backend will be mounted; install in editable mode at runtime
+CMD bash -lc "pip install -e /smds_core && pip install -e /app && uvicorn src.main:app --host 0.0.0.0 --port 8000 --reload"
