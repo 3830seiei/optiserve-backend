@@ -34,7 +34,9 @@ try:
 except ImportError:
     USE_DYNAMIC_PATHS = False
 
-BASE_URL = "http://localhost:8000/api/v1"
+# 環境に応じたAPI接続先の自動判定
+API_HOST = os.environ.get("OPTISERVE_API_HOST", "localhost")
+BASE_URL = f"http://{API_HOST}:8000/api/v1"
 
 # テスト用の共通ヘッダー（認証情報）
 TEST_HEADERS = {"X-User-Id": "900001"}  # システム管理者のuser_id
