@@ -20,15 +20,15 @@ from ..database import SessionLocal
 from ..models.pg_optigate.mst_medical_facility import MstMedicalFacility
 from ..schemas.mst_medical_facility import MedicalFacility, MedicalFacilityCreate
 from ..utils.auth import AuthManager
-from smds_core.logger import Logger
+import logging
 
 router = APIRouter(
     prefix="/api/v1/facilities",
     tags=["facilities"],
 )
 
-# シングルトンロガーの取得
-logger = Logger()
+# 標準ロガーの取得
+logger = logging.getLogger(__name__)
 
 def get_db():
     db = SessionLocal()

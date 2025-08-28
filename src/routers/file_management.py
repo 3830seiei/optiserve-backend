@@ -116,6 +116,13 @@ def get_onpremise_report_files(hpcode: int, year: int, month: int) -> List[Path]
     # 月を0埋め2桁に変換してパス生成
     month_padded = f"{month:02d}"
     onpre_path = ONPRE_REPORTS_PATH / str(hpcode) / str(year) / month_padded
+    
+    # デバッグ情報出力
+    logger.info(f"オンプレミスレポート検索: {onpre_path}")
+    logger.info(f"パス存在チェック: {onpre_path.exists()}")
+    if onpre_path.exists():
+        logger.info(f"ディレクトリ内容: {list(onpre_path.iterdir())}")
+    
     if not onpre_path.exists():
         return []
     
@@ -628,6 +635,8 @@ async def publish_monthly_reports(
     """
     try:
         logger.info(f"月次レポート公開開始: 医療機関ID={medical_id}, 公開年月={publication_ym}")
+        logger.info(f"ONPRE_REPORTS_PATH: {ONPRE_REPORTS_PATH}")
+        logger.info(f"パス設定詳細: {path_config.get_config_info()}")
         
         # 医療機関の存在チェック
         medical_facility = db.query(MstMedicalFacility).filter(

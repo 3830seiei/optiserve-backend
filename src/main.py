@@ -14,10 +14,33 @@ Changelog:
 from fastapi import FastAPI
 from src.routers import auth, users, facilities, user_entity_links, file_management, equipment_classifications, medical_equipment_analysis
 from fastapi.middleware.cors import CORSMiddleware
-from smds_core.logger import Logger
+import logging
+import os
+from pathlib import Path
+
+# ログ設定
+def setup_logging():
+    """標準loggingでログ設定を初期化"""
+    log_dir = Path("./log")
+    log_dir.mkdir(exist_ok=True)
+    
+    # ログファイル名は日付付きで生成
+    from datetime import datetime
+    log_file = log_dir / f"OptiServe_{datetime.now().strftime('%Y%m%d')}.log"
+    
+    # ロギング設定
+    logging.basicConfig(
+        level=logging.INFO,
+        format='[%(asctime)s][%(levelname)s] %(message)s',
+        handlers=[
+            logging.FileHandler(log_file, encoding='utf-8'),
+            logging.StreamHandler()
+        ]
+    )
+    return logging.getLogger(__name__)
 
 # ロガー初期化
-logger = Logger("OptiServe", "config.yaml")
+logger = setup_logging()
 logger.info("OptiServe APIサーバー起動")
 
 app = FastAPI(

@@ -6,10 +6,7 @@ set -euxo pipefail
 # Ensure data dirs exist (in case env overrides the defaults)
 mkdir -p "${REPORTS_DIR:-/data/reports}" "${UPLOADS_DIR:-/data/uploads}" /data
 
-# Editable install for smds_core if mounted; ignore if absent
-if [ -d /smds_core ]; then
-	  pip install --no-cache-dir --root-user-action=ignore -e /smds_core
-fi
+# smds_core dependency removed - using standard logging
 
 # Sync backend runtime deps at container start (handy during dev)
 if [ -f /app/requirements.txt ]; then
@@ -19,9 +16,9 @@ fi
 # Make sure locale/timezone are in effect (optional)
 export LANG="${LANG:-ja_JP.UTF-8}" TZ="${TZ:-Asia/Tokyo}"
 
-# Star API (add reload-dirs for both codebases)
+# Start API (only app reload-dir needed now)
 exec uvicorn \
   --host 0.0.0.0 --port 8000 \
-  --reload --reload-dir /app --reload-dir /smds_core \
+  --reload --reload-dir /app \
   src.main:app
 

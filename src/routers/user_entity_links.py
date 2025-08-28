@@ -23,15 +23,15 @@ from src.models.pg_optigate.user_entity_link import UserEntityLink
 from src.models.pg_optigate.mst_medical_facility import MstMedicalFacility
 from src.schemas.user_entity_link import UserEntityLink as UserEntityLinkSchema, UserEntityLinkCreate
 from ..utils.auth import AuthManager
-from smds_core.logger import Logger
+import logging
 
 router = APIRouter(
     prefix="/api/v1/user-entity-links",
     tags=["user-entity-links"],
 )
 
-# シングルトンロガーの取得
-logger = Logger()
+# 標準ロガーの取得
+logger = logging.getLogger(__name__)
 
 def convert_email_list_for_db(email_list_str: str) -> list:
     """notification_email_listを文字列からDB用リスト形式に変換"""

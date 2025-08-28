@@ -4,34 +4,29 @@
 # ChangeLog:
 #   v1.0.0 (2025-08-06)
 #   - 新規作成（smds_core用設定をベース）
+#   v1.1.0 (2025-08-28)  
+#   - smds_core依存を削除、標準loggingに移行
+#   - logging設定は不要になったためコメントアウト
 #==========================================================
-# ログ設定
+
+# 以下の設定は現在未使用（smds_core.Logger用の設定だったため）
+# 標準loggingの設定は src/main.py で直接設定済み
+
+# logging:
+#   LOGPATH: "./log"
+#   LOGNAME: "OptiServe"
+#   LOGFILTER: "DEBUG"
+#   LOGMAXSIZE: 4194304
+#   LOGBACKUPCOUNT: 5
+#   ORIGINAL_MSG: True
+
+#----------------------------------------------------------
+# データベース設定（未使用）
 # Note:
-#   - LOGFILTERは指定した値より上位のログが出力される
-#     - CRITICAL : 50
-#     - ERROR    : 40
-#     - WARNING  : 30
-#     - INFO     : 20
-#     - DEBUG    : 10
-#     - LOGFILTER="ERROR"とした場合、出力されるのは[ERROR][CRITICAL]のみとなる
+#   - データベース接続は src/database.py で path_config により自動設定
 #----------------------------------------------------------
-logging:
-  LOGPATH: "./log"  # ログファイルの出力パス
-  LOGNAME: "OptiServe"  # ログファイル名の先頭
-  LOGFILTER: "DEBUG"  # ログ出力レベル（フィルター）のデフォルト
-  LOGMAXSIZE: 4194304  # 1つのログファイルの最大サイズ（Byte）
-  LOGBACKUPCOUNT: 5  # ログファイルの最大バックアップ数
-  # ログの書式について
-  #    1) ORIGINAL_MSGがTrueの場合はLOGFORMATは固定でmessageのみとなる
-  #    2) プロジェクト共通の場合はクラス生成は1回なので、(name)は常に一定
-  ORIGINAL_MSG: True  # messageに独自フォーマットをセットする場合はTrue
-  #LOGFORMAT: "[%(asctime)s][%(levelname)s] %(message)s"　　　# プロジェクト共通の書式
-  #LOGFORMAT: "[%(asctime)s][%(name)s][%(levelname)s] %(message)s"　　　# 一般的な書式
-#----------------------------------------------------------
-# データベース設定
-# Note:
-#   - OptiServeはSQLiteを使用
-#----------------------------------------------------------
-database:
-  uri: "sqlite:///poc_optigate.db"  # SqlAlchemyのデータベース接続URI
-  echo: False  # SqlAlchemyでSQL文をコンソール出力するオプション
+# database:
+#   uri: "sqlite:///poc_optigate.db"
+#   echo: False
+
+# このファイルは将来的な設定拡張のために保持

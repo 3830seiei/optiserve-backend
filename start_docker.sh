@@ -4,6 +4,5 @@ docker run --rm -it --name optiserve-backend \
   -e REPORTS_DIR="/data/reports" \
   -e UPLOADS_DIR="/data/uploads" \
   -v "$(pwd)/optiserve-backend:/app" \
-  -v "$(pwd)/smds_core:/smds_core" \
   optiserve-backend:dev
 
