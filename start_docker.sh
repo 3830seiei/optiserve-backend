@@ -1,8 +1,8 @@
 docker run --rm -it --name optiserve-backend \
   -p 8000:8000 \
   -e DATABASE_URL="sqlite:////app/poc_optigate.db" \
-  -e "$(pwd)/data:/app/data" \
-  -e "$(pwd)/files:/app/files" \
+  -v "$(pwd)/data:/app/data" \
+  -v "$(pwd)/files:/app/files" \
   optiserve-backend:dev
 
 #docker run --rm -it --name optiserve-backend \

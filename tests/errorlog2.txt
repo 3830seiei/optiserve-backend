@@ -1,0 +1,207 @@
+((.venv) ) smds@aoi-ph-017:~/projects/optiserve-backend/data/onpre_reports/5/2025/05$ ls
+hpreport-05_20250804.pptx
+((.venv) ) smds@aoi-ph-017:~/projects/optiserve-backend/data/onpre_reports/5/2025/05$ cd
+((.venv) ) smds@aoi-ph-017:~$ cd projects/optiserve-backend
+((.venv) ) smds@aoi-ph-017:~/projects/optiserve-backend$ python -c "from src.utils.path_config import path_config; print(path_config.get_config_info())"
+{'system': 'linux', 'base_path': '/home/smds/projects/optiserve-backend', 'database_path': '/home/smds/projects/optiserve-backend', 'files_base_path': '/home/smds/projects/optiserve-backend/files', 'uploads_path': '/home/smds/projects/optiserve-backend/files/uploads', 'reports_path': '/home/smds/projects/optiserve-backend/files/reports', 'data_path': '/home/smds/projects/optiserve-backend/data', 'onpre_reports_path': '/home/smds/projects/optiserve-backend/data/onpre_reports', 'database_url': 'sqlite:////home/smds/projects/optiserve-backend/poc_optigate.db'}
+
+((.venv) ) smds@aoi-ph-017:~/projects/optiserve-backend$ pytest tests/test_05_file_management_api.py -v -s
+================================================== test session starts ==================================================
+platform linux -- Python 3.12.11, pytest-8.4.1, pluggy-1.6.0 -- /home/smds/projects/optiserve-backend/.venv/bin/python
+cachedir: .pytest_cache
+rootdir: /home/smds/projects/optiserve-backend
+plugins: anyio-4.9.0
+collected 19 items
+
+tests/test_05_file_management_api.py::test_api_server_is_running ✅ APIサーバー稼働確認完了
+PASSED
+tests/test_05_file_management_api.py::test_file_upload_success レスポンス: status_code=200
+✅ ファイルアップロード成功: medical_id=6, 実行月=2025-08
+   アップロードファイル数: 3件
+PASSED
+tests/test_05_file_management_api.py::test_file_upload_nonexistent_medical_id ✅ 存在しない医療機関IDエラー: 医療機関ID（medical_id） 99999 は存在しません
+PASSED
+tests/test_05_file_management_api.py::test_file_upload_wrong_file_extension ✅ 無効なファイル拡張子エラー: 医療機器台帳ファイルはCSV形式である必要があります
+PASSED
+tests/test_05_file_management_api.py::test_file_upload_missing_file ✅ ファイル不足エラー確認完了
+PASSED
+tests/test_05_file_management_api.py::test_file_upload_overwrite ✅ 1回目アップロード成功: 3件
+✅ 上書きアップロード成功: 1回目=2025-08-28T18:37:59, 2回目=2025-08-28T18:37:59
+PASSED
+tests/test_05_file_management_api.py::test_upload_status_endpoint ✅ アップロード状況取得成功: 0件の状況データ
+PASSED
+tests/test_05_file_management_api.py::test_available_reports_endpoint ✅ 利用可能レポート取得成功: 0件のレポート
+PASSED
+tests/test_05_file_management_api.py::test_system_file_download_success ✅ テスト用ファイルアップロード完了
+✅ システムファイルダウンロード成功: equipment.csv (ファイル種別=1)
+✅ システムファイルダウンロード成功: rental.csv (ファイル種別=2)
+✅ システムファイルダウンロード成功: failure.csv (ファイル種別=3)
+PASSED
+tests/test_05_file_management_api.py::test_system_file_download_unauthorized ✅ 認証エラーテスト成功: APIキーなしで401エ ラー
+✅ 認証エラーテスト成功: 間違ったAPIキーで401エラー
+PASSED
+tests/test_05_file_management_api.py::test_system_file_download_file_not_found ✅ ファイル未存在テスト成功: 存在しない医 療機関IDで404エラー
+PASSED
+tests/test_05_file_management_api.py::test_system_file_download_invalid_file_type ✅ 無効なファイル種別テスト成功: ファイル種別99で400エラー
+PASSED
+tests/test_05_file_management_api.py::test_publish_reports_unauthorized ✅ レポート公開認証エラーテスト成功: APIキーなし で401エラー
+✅ レポート公開認証エラーテスト成功: 間違ったAPIキーで401エラー
+PASSED
+tests/test_05_file_management_api.py::test_publish_reports_with_auth ✅ レポート公開認証成功テスト完了: 認証通過後に404エラー（オンプレミスレポート未存在）
+PASSED
+tests/test_05_file_management_api.py::test_publish_onpremise_reports ❌ エラー詳細: 404, {"detail":"オンプレミスレポート が見つかりません: 医療機関ID=5, 年月=2025-05"}
+FAILED
+tests/test_05_file_management_api.py::test_publish_nonexistent_onpremise_reports ✅ 存在しない医療機関IDでレポート公開エ ラーテスト成功
+PASSED
+tests/test_05_file_management_api.py::test_report_download_after_publish ⚠️ レポート公開結果: 404 (既に公開済みの可能性)
+📋 取得したpublication_id: 8
+📊 ダウンロード前状態: download_user_id=10, download_datetime=2025-08-28 17:14:00.442110
+FAILED
+tests/test_05_file_management_api.py::test_report_download_nonexistent_publication ✅ 存在しないpublication_IDでダウンロ ードエラーテスト成功
+PASSED
+tests/test_05_file_management_api.py::test_report_download_multiple_times FAILED
+
+======================================================= FAILURES ========================================================
+____________________________________________ test_publish_onpremise_reports _____________________________________________
+
+    def test_publish_onpremise_reports():
+        """オンプレミスレポート公開テスト（hpcode=5、2025-05月分）"""
+        medical_id = 5
+        publication_ym = "2025-05"
+        system_key = "optiserve-internal-system-key-2025"
+
+        data = {
+            'publication_ym': publication_ym
+        }
+        headers = {"X-System-Key": system_key}
+
+        publish_res = requests.post(
+            f"{BASE_URL}/files/reports/publish/{medical_id}",
+            data=data,
+            headers=headers
+        )
+
+        if publish_res.status_code != 200:
+            print(f"❌ エラー詳細: {publish_res.status_code}, {publish_res.text}")
+>       assert publish_res.status_code == 200
+E       assert 404 == 200
+E        +  where 404 = <Response [404]>.status_code
+
+tests/test_05_file_management_api.py:552: AssertionError
+__________________________________________ test_report_download_after_publish ___________________________________________
+
+    def test_report_download_after_publish():
+        """レポート公開後のダウンロードテスト（user_id=10）"""
+        medical_id = 5
+        publication_ym = "2025-05"
+        system_key = "optiserve-internal-system-key-2025"
+        download_user_id = "10"
+
+        # Step 1: レポートを公開（まず公開されたレポートのpublication_idを取得）
+        data = {
+            'publication_ym': publication_ym
+        }
+        headers = {"X-System-Key": system_key}
+
+        publish_res = requests.post(
+            f"{BASE_URL}/files/reports/publish/{medical_id}",
+            data=data,
+            headers=headers
+        )
+
+        if publish_res.status_code != 200:
+            # 既に公開済みの場合は問題なし
+            print(f"⚠️ レポート公開結果: {publish_res.status_code} (既に公開済みの可能性)")
+        else:
+            publish_data = publish_res.json()
+            print(f"✅ レポート公開成功: {len(publish_data['published_reports'])}件")
+
+        # Step 2: DBから最新のpublication_idを取得してダウンロード実行
+        from src.database import SessionLocal
+        from src.models.pg_optigate.report_publication_log import ReportPublicationLog
+
+        db = SessionLocal()
+        try:
+            # 対象医療機関・年月の最新レポートを取得
+            latest_report = db.query(ReportPublicationLog).filter(
+                ReportPublicationLog.medical_id == medical_id,
+                ReportPublicationLog.publication_ym == publication_ym
+            ).order_by(ReportPublicationLog.upload_datetime.desc()).first()
+
+            if not latest_report:
+                raise Exception(f"公開されたレポートが見つかりません: 医療機関ID={medical_id}, 年月={publication_ym}")
+
+            publication_id = latest_report.publication_id
+            print(f"📋 取得したpublication_id: {publication_id}")
+
+            # ダウンロード前のDB状態を記録
+            download_datetime_before = latest_report.download_datetime
+            download_user_id_before = latest_report.download_user_id
+            print(f"📊 ダウンロード前状態: download_user_id={download_user_id_before}, download_datetime={download_datetime_before}")
+
+        finally:
+            db.close()
+
+        # Step 3: レポートダウンロード実行
+        download_res = requests.get(
+            f"{BASE_URL}/files/reports/download/{publication_id}",
+            params={"user_id": download_user_id},
+            headers=TEST_HEADERS
+        )
+
+>       assert download_res.status_code == 200
+E       assert 404 == 200
+E        +  where 404 = <Response [404]>.status_code
+
+tests/test_05_file_management_api.py:662: AssertionError
+__________________________________________ test_report_download_multiple_times __________________________________________
+
+    def test_report_download_multiple_times():
+        """同一レポートの複数回ダウンロードテスト（DB更新は初回のみ）"""
+        medical_id = 5
+        publication_ym = "2025-05"
+        user_id_1 = "10"
+        user_id_2 = "1"  # 異なるユーザー
+
+        # 最新レポートのpublication_idを取得
+        from src.database import SessionLocal
+        from src.models.pg_optigate.report_publication_log import ReportPublicationLog
+
+        db = SessionLocal()
+        try:
+            latest_report = db.query(ReportPublicationLog).filter(
+                ReportPublicationLog.medical_id == medical_id,
+                ReportPublicationLog.publication_ym == publication_ym
+            ).order_by(ReportPublicationLog.upload_datetime.desc()).first()
+
+            if not latest_report:
+                print("⚠️ テスト用レポートが見つかりません。先にtest_report_download_after_publishを実行してください")
+                return
+
+            publication_id = latest_report.publication_id
+
+            # 1回目のダウンロード（既に実行済みの想定）
+            first_download_user_id = latest_report.download_user_id
+            first_download_datetime = latest_report.download_datetime
+
+        finally:
+            db.close()
+
+        # 2回目のダウンロード（別ユーザー）
+        download_res = requests.get(
+            f"{BASE_URL}/files/reports/download/{publication_id}",
+            params={"user_id": user_id_2},
+            headers=TEST_HEADERS
+        )
+
+>       assert download_res.status_code == 200
+E       assert 404 == 200
+E        +  where 404 = <Response [404]>.status_code
+
+tests/test_05_file_management_api.py:743: AssertionError
+================================================ short test summary info ================================================
+FAILED tests/test_05_file_management_api.py::test_publish_onpremise_reports - assert 404 == 200
+FAILED tests/test_05_file_management_api.py::test_report_download_after_publish - assert 404 == 200
+FAILED tests/test_05_file_management_api.py::test_report_download_multiple_times - assert 404 == 200
+============================================= 3 failed, 16 passed in 0.82s ==============================================
+((.venv) ) smds@aoi-ph-017:~/projects/optiserve-backend$
