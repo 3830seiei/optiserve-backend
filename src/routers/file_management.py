@@ -117,11 +117,19 @@ def get_onpremise_report_files(hpcode: int, year: int, month: int) -> List[Path]
     month_padded = f"{month:02d}"
     onpre_path = ONPRE_REPORTS_PATH / str(hpcode) / str(year) / month_padded
     
-    # デバッグ情報出力
+    # デバッグ情報出力（強制出力）
+    print(f"DEBUG: オンプレミスレポート検索: {onpre_path}")
+    print(f"DEBUG: パス存在チェック: {onpre_path.exists()}")
+    print(f"DEBUG: 絶対パス: {onpre_path.absolute()}")
     logger.info(f"オンプレミスレポート検索: {onpre_path}")
     logger.info(f"パス存在チェック: {onpre_path.exists()}")
+    
     if onpre_path.exists():
-        logger.info(f"ディレクトリ内容: {list(onpre_path.iterdir())}")
+        contents = list(onpre_path.iterdir())
+        print(f"DEBUG: ディレクトリ内容: {contents}")
+        logger.info(f"ディレクトリ内容: {contents}")
+    else:
+        print(f"DEBUG: ディレクトリが存在しません")
     
     if not onpre_path.exists():
         return []

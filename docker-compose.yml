@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  optiserve-backend:
+    build: .
+    container_name: optiserve-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:////app/poc_optigate.db
+      - OPTISERVE_BASE_PATH=/app
+    volumes:
+      - ./data:/app/data
+      - ./files:/app/files
+      - ./log:/app/log
+    restart: unless-stopped
+    networks:
+      - smdspoc-network
+
+networks:
+  smdspoc-network:
+    external: true
